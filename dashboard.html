@@ -4,37 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Photo Restoration Landscape — Competitive Intelligence</title>
+  <meta name="description" content="Competitive intelligence dashboard comparing 8 AI photo restoration companies: Skylum, Dzine, Lift, Renew, Photomyne, Photoroom, Remini, Picsart. Features, pricing, SEO, and landing page analysis.">
+  <meta property="og:title" content="Photo Restoration Landscape — Competitive Intelligence">
+  <meta property="og:description" content="8 AI photo companies compared: features, pricing, SEO keywords, landing page CTAs. Interactive dashboard with live data.">
+  <meta property="og:image" content="https://photo-restoration-landscape.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Photo Restoration Landscape — Competitive Intelligence">
+  <meta name="twitter:image" content="https://photo-restoration-landscape.vercel.app/og-image.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     :root {
-      --bg-primary: #0f172a;
-      --bg-card: #1e293b;
-      --bg-card-hover: #263550;
-      --border: #334155;
-      --text-primary: #f1f5f9;
-      --text-secondary: #94a3b8;
-      --text-muted: #64748b;
-      --accent: #3b82f6;
+      --bg-primary: #000000;
+      --bg-card: #1a1410;
+      --bg-card-hover: #241c17;
+      --border: #54433a;
+      --text-primary: #f5f3f0;
+      --text-secondary: #c8c0b8;
+      --text-muted: #7a6e68;
+      --accent: #b5563a;
 
-      --skylum:    #3b82f6;
-      --dzine:     #8b5cf6;
-      --lift:      #f59e0b;
-      --renew:     #10b981;
-      --photomyne: #ef4444;
-      --photoroom: #06b6d4;
-      --remini:    #f97316;
-      --picsart:   #ec4899;
+      --skylum:    #b5563a;
+      --dzine:     #8b6b5a;
+      --lift:      #d4845a;
+      --renew:     #7a9484;
+      --photomyne: #c47050;
+      --photoroom: #6a8a8a;
+      --remini:    #d49060;
+      --picsart:   #c07080;
     }
 
     .light {
-      --bg-primary: #f1f5f9;
-      --bg-card: #ffffff;
-      --bg-card-hover: #f8fafc;
-      --border: #e2e8f0;
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
-      --text-muted: #94a3b8;
+      --bg-primary: #f5f3f0;
+      --bg-card: #ede8e2;
+      --bg-card-hover: #e4ddd5;
+      --border: #c8b8ae;
+      --text-primary: #2a1f1a;
+      --text-secondary: #54433a;
+      --text-muted: #8a7068;
+      --accent: #b5563a;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -70,7 +81,7 @@
       line-height: 1.2;
     }
     .header h1 span {
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      background: linear-gradient(135deg, #b5563a, #54433a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -111,6 +122,8 @@
       background: var(--bg-card);
       border-bottom: 1px solid var(--border);
       flex-wrap: wrap;
+      /* When inside .main, bleed to full width */
+      margin: -28px -32px 28px;
     }
     .stat-item { display: flex; flex-direction: column; }
     .stat-value { font-size: 24px; font-weight: 800; color: var(--accent); }
@@ -161,9 +174,9 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: var(--card-color, #3b82f6);
+      background: var(--card-color, #b5563a);
     }
-    .competitor-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); border-color: var(--card-color, #3b82f6); }
+    .competitor-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); border-color: var(--card-color, #b5563a); }
     .card-avatar {
       width: 44px; height: 44px;
       border-radius: 10px;
@@ -171,15 +184,15 @@
       font-size: 18px; font-weight: 800;
       color: #fff;
       margin-bottom: 12px;
-      background: var(--card-color, #3b82f6);
+      background: var(--card-color, #b5563a);
     }
     .card-name { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
     .card-tagline { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
     .card-metric {
       font-size: 13px;
       font-weight: 600;
-      color: var(--card-color, #3b82f6);
-      background: color-mix(in srgb, var(--card-color, #3b82f6) 12%, transparent);
+      color: var(--card-color, #b5563a);
+      background: color-mix(in srgb, var(--card-color, #b5563a) 12%, transparent);
       padding: 4px 10px;
       border-radius: 20px;
       display: inline-block;
@@ -309,9 +322,9 @@
     }
     .matrix-table tr:hover td { background: var(--bg-card-hover); }
     .matrix-table tr:hover td:first-child { background: var(--bg-card-hover); }
-    .check { color: #10b981; font-size: 16px; }
-    .cross { color: #ef4444; font-size: 16px; }
-    .partial { color: #f59e0b; font-size: 14px; font-weight: 600; }
+    .check { color: #b5563a; font-size: 16px; }
+    .cross { color: #54433a; font-size: 16px; }
+    .partial { color: #d49060; font-size: 14px; font-weight: 600; }
     .col-header-name {
       display: block;
       margin-top: 4px;
@@ -371,18 +384,18 @@
       font-weight: 500;
     }
     .heatmap-table td:hover { transform: scale(1.05); z-index: 2; position: relative; }
-    .heat-0  { background: #1e293b; color: #475569; }
-    .heat-1  { background: color-mix(in srgb, #3b82f6 15%, #1e293b); color: #93c5fd; }
-    .heat-2  { background: color-mix(in srgb, #3b82f6 35%, #1e293b); color: #bfdbfe; }
-    .heat-3  { background: color-mix(in srgb, #3b82f6 55%, #1e293b); color: #fff; }
-    .heat-full { background: #3b82f6; color: #fff; }
+    .heat-0  { background: #1a1410; color: #7a6e68; }
+    .heat-1  { background: color-mix(in srgb, #54433a 60%, #1a1410); color: #c8c0b8; }
+    .heat-2  { background: color-mix(in srgb, #b5563a 55%, #1a1410); color: #f5f3f0; }
+    .heat-3  { background: color-mix(in srgb, #d4845a 70%, #1a1410); color: #fff; }
+    .heat-full { background: #d4845a; color: #fff; }
 
     /* ── NOTIFICATION ── */
     .toast {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: #10b981;
+      background: #b5563a;
       color: #fff;
       padding: 12px 20px;
       border-radius: 8px;
@@ -417,10 +430,66 @@
       flex-shrink: 0;
     }
 
+    /* ── TAB NAV ── */
+    .tab-nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 32px;
+      position: sticky;
+      top: var(--header-h, 73px);
+      z-index: 90;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .tab-nav::-webkit-scrollbar { display: none; }
+    .tab-nav-inner {
+      display: flex;
+      gap: 8px;
+      min-width: max-content;
+    }
+    .tab-btn {
+      padding: 7px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: #54433a;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+    }
+    .tab-btn:hover {
+      background: var(--bg-card-hover);
+      color: var(--text-secondary);
+      border-color: var(--accent);
+    }
+    .tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #f5f3f0;
+    }
+
+    /* ── TAB SCREENS ── */
+    .tab-screen {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .tab-screen.active {
+      display: block;
+    }
+    .tab-screen.visible {
+      opacity: 1;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .header { padding: 16px 20px; }
-      .stats-bar { padding: 12px 20px; gap: 20px; }
+      .tab-nav { padding: 10px 20px; }
+      .stats-bar { padding: 12px 20px; gap: 20px; margin: -20px -20px 20px; }
       .main { padding: 20px; }
       .header h1 { font-size: 16px; }
       .stat-value { font-size: 20px; }
@@ -428,9 +497,9 @@
 
     /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg-primary); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+    ::-webkit-scrollbar-track { background: #000000; }
+    ::-webkit-scrollbar-thumb { background: #54433a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #b5563a; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeInUp {
@@ -456,9 +525,9 @@
       border-radius: 4px;
       white-space: nowrap;
     }
-    .pricing-badge.visible   { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
-    .pricing-badge.linked    { background: rgba(245,158,11,0.15);  color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
-    .pricing-badge.hidden-pr { background: rgba(239,68,68,0.12);   color: #ef4444; border: 1px solid rgba(239,68,68,0.25); }
+    .pricing-badge.visible   { background: rgba(122,148,132,0.18); color: #7a9484; border: 1px solid rgba(122,148,132,0.35); }
+    .pricing-badge.linked    { background: rgba(212,144,96,0.18);  color: #d49060; border: 1px solid rgba(212,144,96,0.35); }
+    .pricing-badge.hidden-pr { background: rgba(181,86,58,0.15);   color: #b5563a; border: 1px solid rgba(181,86,58,0.30); }
 
     .cta-card {
       background: var(--bg-card);
@@ -473,7 +542,7 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: var(--card-color, #3b82f6);
+      background: var(--card-color, #b5563a);
     }
     .cta-btn-pill {
       display: inline-block;
@@ -481,9 +550,9 @@
       font-weight: 600;
       padding: 4px 10px;
       border-radius: 20px;
-      background: color-mix(in srgb, var(--card-color, #3b82f6) 15%, transparent);
-      color: var(--card-color, #3b82f6);
-      border: 1px solid color-mix(in srgb, var(--card-color, #3b82f6) 35%, transparent);
+      background: color-mix(in srgb, var(--card-color, #b5563a) 15%, transparent);
+      color: var(--card-color, #b5563a);
+      border: 1px solid color-mix(in srgb, var(--card-color, #b5563a) 35%, transparent);
       margin-bottom: 8px;
       max-width: 100%;
       overflow: hidden;
@@ -500,15 +569,15 @@
     .cta-stat-row span:last-child { font-weight: 600; color: var(--text-secondary); }
 
     /* Len badge coloring for meta tags */
-    .len-good   { background: rgba(16,185,129,0.15); color: #10b981; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; }
-    .len-ok     { background: rgba(245,158,11,0.15);  color: #f59e0b; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; }
-    .len-bad    { background: rgba(239,68,68,0.12);   color: #ef4444; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; }
+    .len-good   { background: rgba(122,148,132,0.18); color: #7a9484; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; }
+    .len-ok     { background: rgba(212,144,96,0.18);  color: #d49060; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; }
+    .len-bad    { background: rgba(181,86,58,0.15);   color: #b5563a; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; }
 
-    /* Keyword heatmap uses same heat-N classes but with blue intensity for frequency */
-    .kw-heat-0  { background: #1e293b; color: #475569; }
-    .kw-heat-1  { background: color-mix(in srgb, #3b82f6 18%, #1e293b); color: #93c5fd; }
-    .kw-heat-2  { background: color-mix(in srgb, #3b82f6 40%, #1e293b); color: #bfdbfe; }
-    .kw-heat-3  { background: color-mix(in srgb, #3b82f6 70%, #1e293b); color: #fff; }
+    /* Keyword heatmap uses warm palette for frequency */
+    .kw-heat-0  { background: #1a1410; color: #7a6e68; }
+    .kw-heat-1  { background: color-mix(in srgb, #54433a 60%, #1a1410); color: #c8c0b8; }
+    .kw-heat-2  { background: color-mix(in srgb, #b5563a 55%, #1a1410); color: #f5f3f0; }
+    .kw-heat-3  { background: color-mix(in srgb, #d4845a 70%, #1a1410); color: #fff; }
 
     .seo-score-card {
       background: var(--bg-card);
@@ -523,7 +592,7 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: var(--card-color, #3b82f6);
+      background: var(--card-color, #b5563a);
     }
     .seo-score-row {
       display: flex;
@@ -535,9 +604,9 @@
       border-bottom: 1px solid var(--border);
     }
     .seo-score-row:last-child { border-bottom: none; }
-    .sco-g { color: #10b981; font-weight: 700; }
-    .sco-y { color: #f59e0b; font-weight: 700; }
-    .sco-r { color: #ef4444; font-weight: 700; }
+    .sco-g { color: #7a9484; font-weight: 700; }
+    .sco-y { color: #d49060; font-weight: 700; }
+    .sco-r { color: #b5563a; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -550,7 +619,7 @@
       <div class="header-meta">Last updated: March 14, 2026 &nbsp;·&nbsp; 8 competitors tracked</div>
     </div>
     <div class="header-controls">
-      <select class="btn" id="categoryFilter">
+      <select class="btn" id="categoryFilter" style="display:none">
         <option value="all">All Categories</option>
         <option value="Desktop Photo Editor">Desktop Photo Editor</option>
         <option value="AI Design Tool">AI Design Tool</option>
@@ -567,188 +636,221 @@
   </div>
 </header>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <span class="stat-value">8</span>
-    <span class="stat-label">Competitors</span>
+<!-- TAB NAV -->
+<nav class="tab-nav" id="tabNav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="features">Features</button>
+    <button class="tab-btn" data-tab="pricing">Pricing &amp; Platforms</button>
+    <button class="tab-btn" data-tab="landing">Landing Pages</button>
+    <button class="tab-btn" data-tab="seo">SEO</button>
   </div>
-  <div class="stat-item">
-    <span class="stat-value">16</span>
-    <span class="stat-label">Features Tracked</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-value">5</span>
-    <span class="stat-label">Platforms Covered</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-value">100M+</span>
-    <span class="stat-label">Largest User Base</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-value">6/8</span>
-    <span class="stat-label">Offer Free Tier</span>
-  </div>
-</div>
+</nav>
 
 <!-- MAIN -->
 <main class="main">
 
-  <!-- SECTION 1: COMPETITOR CARDS -->
-  <section class="section" id="cardsSection">
-    <div class="section-title">Competitor Overview <span class="section-subtitle">Cards filtered by category</span></div>
-    <div class="cards-grid" id="cardsGrid"></div>
-  </section>
+  <!-- ── OVERVIEW TAB ── -->
+  <section class="tab-screen active" id="screen-overview">
 
-  <!-- SECTION 2: FEATURE MATRIX -->
-  <section class="section">
-    <div class="section-title">Feature Matrix <span class="section-subtitle">Full capability comparison</span></div>
-    <div class="matrix-wrap">
-      <table class="matrix-table" id="featureMatrix"></table>
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-value">8</span>
+        <span class="stat-label">Competitors</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">16</span>
+        <span class="stat-label">Features Tracked</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">5</span>
+        <span class="stat-label">Platforms Covered</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">100M+</span>
+        <span class="stat-label">Largest User Base</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">6/8</span>
+        <span class="stat-label">Offer Free Tier</span>
+      </div>
     </div>
-  </section>
 
-  <!-- SECTION 3 & 4: PRICING + PLATFORM -->
-  <div class="charts-row section">
-    <div class="chart-card">
-      <div class="chart-header">
-        <span class="chart-title">Annual Cost Comparison (USD)</span>
-        <div class="chart-toggle">
-          <button class="toggle-btn active" onclick="setPricingChart('bar', this)">Bar</button>
-          <button class="toggle-btn" onclick="setPricingChart('radar', this)">Radar</button>
+    <!-- Competitor Cards -->
+    <section class="section" id="cardsSection">
+      <div class="section-title">Competitor Overview <span class="section-subtitle">Cards filtered by category</span></div>
+      <div class="cards-grid" id="cardsGrid"></div>
+    </section>
+
+    <!-- Market Position Map -->
+    <section class="section">
+      <div class="section-title">Market Position Map <span class="section-subtitle">Feature breadth vs. market reach (bubble size = user base)</span></div>
+      <div class="chart-card">
+        <div class="chart-wrap" style="height:380px">
+          <canvas id="scatterChart"></canvas>
+        </div>
+        <div class="scatter-legend" id="scatterLegend"></div>
+      </div>
+    </section>
+
+  </section><!-- /overview -->
+
+  <!-- ── FEATURES TAB ── -->
+  <section class="tab-screen" id="screen-features">
+
+    <!-- Feature Matrix -->
+    <section class="section">
+      <div class="section-title">Feature Matrix <span class="section-subtitle">Full capability comparison</span></div>
+      <div class="matrix-wrap">
+        <table class="matrix-table" id="featureMatrix"></table>
+      </div>
+    </section>
+
+    <!-- AI Capabilities Heatmap -->
+    <section class="section">
+      <div class="section-title">AI Capabilities Heatmap <span class="section-subtitle">Depth of AI feature implementation (0 = none, 3 = deep)</span></div>
+      <div class="heatmap-grid">
+        <table class="heatmap-table" id="heatmapTable"></table>
+      </div>
+    </section>
+
+  </section><!-- /features -->
+
+  <!-- ── PRICING & PLATFORMS TAB ── -->
+  <section class="tab-screen" id="screen-pricing">
+
+    <div class="charts-row section">
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">Annual Cost Comparison (USD)</span>
+          <div class="chart-toggle">
+            <button class="toggle-btn active" onclick="setPricingChart('bar', this)">Bar</button>
+            <button class="toggle-btn" onclick="setPricingChart('radar', this)">Radar</button>
+          </div>
+        </div>
+        <div class="chart-wrap" style="height:300px">
+          <canvas id="pricingChart"></canvas>
         </div>
       </div>
-      <div class="chart-wrap" style="height:300px">
-        <canvas id="pricingChart"></canvas>
-      </div>
-    </div>
-    <div class="chart-card">
-      <div class="chart-header">
-        <span class="chart-title">Platform Coverage</span>
-        <div class="chart-toggle">
-          <button class="toggle-btn active" onclick="setPlatformChart('bar', this)">Bar</button>
-          <button class="toggle-btn" onclick="setPlatformChart('radar', this)">Radar</button>
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">Platform Coverage</span>
+          <div class="chart-toggle">
+            <button class="toggle-btn active" onclick="setPlatformChart('bar', this)">Bar</button>
+            <button class="toggle-btn" onclick="setPlatformChart('radar', this)">Radar</button>
+          </div>
+        </div>
+        <div class="chart-wrap" style="height:300px">
+          <canvas id="platformChart"></canvas>
         </div>
       </div>
-      <div class="chart-wrap" style="height:300px">
-        <canvas id="platformChart"></canvas>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 5: MARKET POSITION MAP -->
-  <section class="section">
-    <div class="section-title">Market Position Map <span class="section-subtitle">Feature breadth vs. market reach (bubble size = user base)</span></div>
-    <div class="chart-card">
-      <div class="chart-wrap" style="height:380px">
-        <canvas id="scatterChart"></canvas>
-      </div>
-      <div class="scatter-legend" id="scatterLegend"></div>
-    </div>
-  </section>
-
-  <!-- SECTION 6: AI CAPABILITIES HEATMAP -->
-  <section class="section">
-    <div class="section-title">AI Capabilities Heatmap <span class="section-subtitle">Depth of AI feature implementation (0 = none, 3 = deep)</span></div>
-    <div class="heatmap-grid">
-      <table class="heatmap-table" id="heatmapTable"></table>
-    </div>
-  </section>
-
-  <!-- SECTION 7: LANDING PAGE INTELLIGENCE -->
-  <section class="section">
-    <div class="section-title">Landing Page Intelligence <span class="section-subtitle">Hero messaging, CTAs, and conversion signals</span></div>
-
-    <!-- 7a: Hero Headlines Table -->
-    <div class="chart-card" style="margin-bottom:20px">
-      <div class="chart-header">
-        <span class="chart-title">Hero Headlines &amp; Primary CTAs</span>
-      </div>
-      <div class="matrix-wrap" style="border:none;border-radius:0">
-        <table class="matrix-table" style="min-width:800px;font-size:13px">
-          <thead>
-            <tr>
-              <th style="text-align:left;min-width:110px">Competitor</th>
-              <th style="text-align:left;min-width:220px">Hero Headline</th>
-              <th style="text-align:left;min-width:200px">Subheadline</th>
-              <th style="text-align:left;min-width:160px">Primary CTA</th>
-            </tr>
-          </thead>
-          <tbody id="heroHeadlinesBody"></tbody>
-        </table>
-      </div>
     </div>
 
-    <!-- 7b: CTA & Promotion Comparison Cards -->
-    <div style="margin-bottom:8px;font-size:13px;font-weight:600;color:var(--text-secondary)">CTA &amp; Promotion Signals</div>
-    <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));margin-bottom:20px" id="ctaCardsGrid"></div>
+  </section><!-- /pricing -->
 
-    <!-- 7c: Trust Signals Bar Chart -->
-    <div class="chart-card">
-      <div class="chart-header">
-        <span class="chart-title">Social Proof &amp; Trust Signal Count</span>
-      </div>
-      <div class="chart-wrap" style="height:260px">
-        <canvas id="trustSignalsChart"></canvas>
-      </div>
-    </div>
-  </section>
+  <!-- ── LANDING PAGES TAB ── -->
+  <section class="tab-screen" id="screen-landing">
 
-  <!-- SECTION 8: SEO COMPETITIVE ANALYSIS -->
-  <section class="section">
-    <div class="section-title">SEO Competitive Analysis <span class="section-subtitle">Meta tags, keyword targeting, and technical SEO</span></div>
+    <section class="section">
+      <div class="section-title">Landing Page Intelligence <span class="section-subtitle">Hero messaging, CTAs, and conversion signals</span></div>
 
-    <!-- 8a: Meta Tag Comparison Table -->
-    <div class="chart-card" style="margin-bottom:20px">
-      <div class="chart-header">
-        <span class="chart-title">Meta Tag Comparison</span>
-        <span style="font-size:11px;color:var(--text-muted)">Title: green 50-60 chars · yellow 40-70 · red otherwise &nbsp;|&nbsp; Desc: green 150-160 · yellow 120-170 · red otherwise</span>
+      <!-- Hero Headlines Table -->
+      <div class="chart-card" style="margin-bottom:20px">
+        <div class="chart-header">
+          <span class="chart-title">Hero Headlines &amp; Primary CTAs</span>
+        </div>
+        <div class="matrix-wrap" style="border:none;border-radius:0">
+          <table class="matrix-table" style="min-width:800px;font-size:13px">
+            <thead>
+              <tr>
+                <th style="text-align:left;min-width:110px">Competitor</th>
+                <th style="text-align:left;min-width:220px">Hero Headline</th>
+                <th style="text-align:left;min-width:200px">Subheadline</th>
+                <th style="text-align:left;min-width:160px">Primary CTA</th>
+              </tr>
+            </thead>
+            <tbody id="heroHeadlinesBody"></tbody>
+          </table>
+        </div>
       </div>
-      <div class="matrix-wrap" style="border:none;border-radius:0">
-        <table class="matrix-table" style="min-width:900px;font-size:12px">
-          <thead>
-            <tr>
-              <th style="text-align:left;min-width:100px">Competitor</th>
-              <th style="text-align:left;min-width:260px">Title</th>
-              <th style="text-align:center;min-width:50px">Len</th>
-              <th style="text-align:left;min-width:260px">Description</th>
-              <th style="text-align:center;min-width:50px">Len</th>
-              <th style="text-align:center;min-width:55px">OG Tags</th>
-              <th style="text-align:center;min-width:70px">Twitter Card</th>
-              <th style="text-align:center;min-width:70px">Schema.org</th>
-            </tr>
-          </thead>
-          <tbody id="metaTagsBody"></tbody>
-        </table>
-      </div>
-    </div>
 
-    <!-- 8b: Keyword Frequency Heatmap -->
-    <div class="chart-card" style="margin-bottom:20px">
-      <div class="chart-header">
-        <span class="chart-title">Keyword Frequency Heatmap</span>
-        <span style="font-size:11px;color:var(--text-muted)">Count per page · gray=0 · light blue=1-5 · medium=6-15 · dark=16+</span>
-      </div>
-      <div class="heatmap-grid" style="border:none">
-        <table class="heatmap-table" style="min-width:750px" id="kwHeatmapTable"></table>
-      </div>
-    </div>
+      <!-- CTA & Promotion Cards -->
+      <div style="margin-bottom:8px;font-size:13px;font-weight:600;color:var(--text-secondary)">CTA &amp; Promotion Signals</div>
+      <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));margin-bottom:20px" id="ctaCardsGrid"></div>
 
-    <!-- 8c: SEO Score Cards -->
-    <div style="margin-bottom:8px;font-size:13px;font-weight:600;color:var(--text-secondary)">SEO Score Cards</div>
-    <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(190px,1fr));margin-bottom:20px" id="seoScoreCards"></div>
+      <!-- Trust Signals Bar Chart -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">Social Proof &amp; Trust Signal Count</span>
+        </div>
+        <div class="chart-wrap" style="height:260px">
+          <canvas id="trustSignalsChart"></canvas>
+        </div>
+      </div>
+    </section>
 
-    <!-- 8d: Keyword Opportunity Chart -->
-    <div class="chart-card">
-      <div class="chart-header">
-        <span class="chart-title">Keyword Opportunity — Low-Competition Terms</span>
-        <span style="font-size:11px;color:var(--text-muted)">Terms targeted by 1-2 competitors only</span>
+  </section><!-- /landing -->
+
+  <!-- ── SEO TAB ── -->
+  <section class="tab-screen" id="screen-seo">
+
+    <section class="section">
+      <div class="section-title">SEO Competitive Analysis <span class="section-subtitle">Meta tags, keyword targeting, and technical SEO</span></div>
+
+      <!-- Meta Tag Comparison Table -->
+      <div class="chart-card" style="margin-bottom:20px">
+        <div class="chart-header">
+          <span class="chart-title">Meta Tag Comparison</span>
+          <span style="font-size:11px;color:var(--text-muted)">Title: green 50-60 chars · yellow 40-70 · red otherwise &nbsp;|&nbsp; Desc: green 150-160 · yellow 120-170 · red otherwise</span>
+        </div>
+        <div class="matrix-wrap" style="border:none;border-radius:0">
+          <table class="matrix-table" style="min-width:900px;font-size:12px">
+            <thead>
+              <tr>
+                <th style="text-align:left;min-width:100px">Competitor</th>
+                <th style="text-align:left;min-width:260px">Title</th>
+                <th style="text-align:center;min-width:50px">Len</th>
+                <th style="text-align:left;min-width:260px">Description</th>
+                <th style="text-align:center;min-width:50px">Len</th>
+                <th style="text-align:center;min-width:55px">OG Tags</th>
+                <th style="text-align:center;min-width:70px">Twitter Card</th>
+                <th style="text-align:center;min-width:70px">Schema.org</th>
+              </tr>
+            </thead>
+            <tbody id="metaTagsBody"></tbody>
+          </table>
+        </div>
       </div>
-      <div class="chart-wrap" style="height:280px">
-        <canvas id="kwOpportunityChart"></canvas>
+
+      <!-- Keyword Frequency Heatmap -->
+      <div class="chart-card" style="margin-bottom:20px">
+        <div class="chart-header">
+          <span class="chart-title">Keyword Frequency Heatmap</span>
+          <span style="font-size:11px;color:var(--text-muted)">Count per page · gray=0 · light blue=1-5 · medium=6-15 · dark=16+</span>
+        </div>
+        <div class="heatmap-grid" style="border:none">
+          <table class="heatmap-table" style="min-width:750px" id="kwHeatmapTable"></table>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <!-- SEO Score Cards -->
+      <div style="margin-bottom:8px;font-size:13px;font-weight:600;color:var(--text-secondary)">SEO Score Cards</div>
+      <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(190px,1fr));margin-bottom:20px" id="seoScoreCards"></div>
+
+      <!-- Keyword Opportunity Chart -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">Keyword Opportunity — Low-Competition Terms</span>
+          <span style="font-size:11px;color:var(--text-muted)">Terms targeted by 1-2 competitors only</span>
+        </div>
+        <div class="chart-wrap" style="height:280px">
+          <canvas id="kwOpportunityChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </section><!-- /seo -->
 
 </main>
 
@@ -759,14 +861,14 @@
 //  DATA
 // ─────────────────────────────────────────────
 const COLORS = {
-  Skylum:    '#3b82f6',
-  Dzine:     '#8b5cf6',
-  Lift:      '#f59e0b',
-  Renew:     '#10b981',
-  Photomyne: '#ef4444',
-  Photoroom: '#06b6d4',
-  Remini:    '#f97316',
-  Picsart:   '#ec4899',
+  Skylum:    '#b5563a',
+  Dzine:     '#8b6b5a',
+  Lift:      '#d4845a',
+  Renew:     '#7a9484',
+  Photomyne: '#c47050',
+  Photoroom: '#6a8a8a',
+  Remini:    '#d49060',
+  Picsart:   '#c07080',
 };
 
 const competitors = [
@@ -1002,7 +1104,7 @@ function buildCards(category) {
       <div class="card-platforms">${platforms}</div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
         <span style="font-size:12px;color:var(--text-muted)">${c.pricingNote}</span>
-        ${c.rating ? `<span style="font-size:12px;font-weight:600;color:#f59e0b">★ ${c.rating}</span>` : ''}
+        ${c.rating ? `<span style="font-size:12px;font-weight:600;color:#d49060">★ ${c.rating}</span>` : ''}
       </div>
       <a class="card-link" href="${c.site}" target="_blank" rel="noopener" style="margin-top:10px;display:block">Visit Site →</a>
     `;
@@ -1083,8 +1185,8 @@ function buildPricingChart(type) {
         ? [{
             label: 'Annual Cost (Low)',
             data: competitors.map(c => c.annualCostLow ?? 0),
-            borderColor: '#3b82f6',
-            backgroundColor: 'rgba(59,130,246,0.15)',
+            borderColor: '#b5563a',
+            backgroundColor: 'rgba(181,86,58,0.15)',
             pointBackgroundColor: bgColors,
             pointRadius: 4,
           }]
@@ -1126,25 +1228,25 @@ function buildPricingChart(type) {
       },
       scales: isRadar ? {
         r: {
-          ticks: { color: '#64748b', font: { size: 10 } },
-          grid: { color: '#334155' },
-          pointLabels: { color: '#94a3b8', font: { size: 11 } },
+          ticks: { color: '#7a6e68', font: { size: 10 } },
+          grid: { color: '#54433a' },
+          pointLabels: { color: '#c8c0b8', font: { size: 11 } },
           suggestedMax: maxVal + 20,
         }
       } : {
         x: {
           stacked: true,
-          ticks: { color: '#94a3b8', font: { size: 11 } },
-          grid: { color: '#334155' },
+          ticks: { color: '#c8c0b8', font: { size: 11 } },
+          grid: { color: '#54433a' },
         },
         y: {
           stacked: true,
           ticks: {
-            color: '#94a3b8',
+            color: '#c8c0b8',
             font: { size: 11 },
             callback: v => `$${v}`
           },
-          grid: { color: '#1e293b' },
+          grid: { color: '#1a1410' },
         }
       }
     }
@@ -1198,8 +1300,8 @@ function buildPlatformChart(type) {
           r: {
             min: 0, max: 1,
             ticks: { display: false },
-            grid: { color: '#334155' },
-            pointLabels: { color: '#94a3b8', font: { size: 12 } }
+            grid: { color: '#54433a' },
+            pointLabels: { color: '#c8c0b8', font: { size: 12 } }
           }
         }
       }
@@ -1235,13 +1337,13 @@ function buildPlatformChart(type) {
         },
         scales: {
           x: {
-            ticks: { color: '#94a3b8', font: { size: 11 }, stepSize: 1 },
-            grid: { color: '#1e293b' },
+            ticks: { color: '#c8c0b8', font: { size: 11 }, stepSize: 1 },
+            grid: { color: '#1a1410' },
             max: 6,
           },
           y: {
-            ticks: { color: '#94a3b8', font: { size: 11 } },
-            grid: { color: '#334155' },
+            ticks: { color: '#c8c0b8', font: { size: 11 } },
+            grid: { color: '#54433a' },
           }
         }
       }
@@ -1326,28 +1428,28 @@ function buildScatterChart() {
           title: {
             display: true,
             text: 'Feature Breadth (# of features)',
-            color: '#64748b',
+            color: '#7a6e68',
             font: { size: 12 }
           },
-          ticks: { color: '#94a3b8', stepSize: 1 },
-          grid: { color: '#1e293b' },
+          ticks: { color: '#c8c0b8', stepSize: 1 },
+          grid: { color: '#1a1410' },
           min: 0, max: 16
         },
         y: {
           title: {
             display: true,
             text: 'Market Reach (log₁₀ users)',
-            color: '#64748b',
+            color: '#7a6e68',
             font: { size: 12 }
           },
           ticks: {
-            color: '#94a3b8',
+            color: '#c8c0b8',
             callback: v => {
               const map = { 5: '100K', 6: '1M', 7: '10M', 8: '100M' };
               return map[v] || `10^${v}`;
             }
           },
-          grid: { color: '#1e293b' },
+          grid: { color: '#1a1410' },
           min: 4.5, max: 8.7
         }
       }
@@ -1799,14 +1901,14 @@ function buildTrustSignalsChart() {
       },
       scales: {
         x: {
-          ticks: { color: '#94a3b8', font: { size: 11 }, stepSize: 1 },
-          grid: { color: '#1e293b' },
+          ticks: { color: '#c8c0b8', font: { size: 11 }, stepSize: 1 },
+          grid: { color: '#1a1410' },
           min: 0,
           max: 3,
         },
         y: {
-          ticks: { color: '#94a3b8', font: { size: 12 } },
-          grid: { color: '#334155' },
+          ticks: { color: '#c8c0b8', font: { size: 12 } },
+          grid: { color: '#54433a' },
         }
       }
     }
@@ -1939,10 +2041,10 @@ function buildKwOpportunityChart() {
   const usedByLabels = sorted.map(d => d.usedBy.join(', '));
 
   const barColors = sorted.map(d =>
-    d.competitorCount === 1 ? '#10b981cc' : '#3b82f6cc'
+    d.competitorCount === 1 ? '#7a9484cc' : '#b5563acc'
   );
   const borderColors = sorted.map(d =>
-    d.competitorCount === 1 ? '#10b981' : '#3b82f6'
+    d.competitorCount === 1 ? '#7a9484' : '#b5563a'
   );
 
   new Chart(ctx, {
@@ -1979,20 +2081,20 @@ function buildKwOpportunityChart() {
       },
       scales: {
         x: {
-          ticks: { color: '#94a3b8', font: { size: 11 }, stepSize: 1 },
-          grid: { color: '#1e293b' },
+          ticks: { color: '#c8c0b8', font: { size: 11 }, stepSize: 1 },
+          grid: { color: '#1a1410' },
           min: 0,
           max: 3,
           title: {
             display: true,
             text: 'Number of competitors targeting this keyword',
-            color: '#64748b',
+            color: '#7a6e68',
             font: { size: 11 },
           }
         },
         y: {
-          ticks: { color: '#94a3b8', font: { size: 12 } },
-          grid: { color: '#334155' },
+          ticks: { color: '#c8c0b8', font: { size: 12 } },
+          grid: { color: '#54433a' },
         }
       }
     }
@@ -2000,26 +2102,119 @@ function buildKwOpportunityChart() {
 }
 
 // ─────────────────────────────────────────────
+//  TAB SYSTEM
+// ─────────────────────────────────────────────
+
+// Track which tabs have been initialized (for lazy chart init)
+const tabInitialized = {
+  overview: false,
+  features: false,
+  pricing: false,
+  landing: false,
+  seo: false,
+};
+
+const TAB_IDS = ['overview', 'features', 'pricing', 'landing', 'seo'];
+
+function activateTab(tabId, pushState) {
+  if (!TAB_IDS.includes(tabId)) tabId = 'overview';
+
+  // Update buttons
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === tabId);
+  });
+
+  // Show/hide screens with fade
+  TAB_IDS.forEach(id => {
+    const screen = document.getElementById('screen-' + id);
+    if (!screen) return;
+    if (id === tabId) {
+      screen.classList.add('active');
+      // Force reflow then add visible for opacity transition
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => screen.classList.add('visible'));
+      });
+    } else {
+      screen.classList.remove('visible');
+      screen.classList.remove('active');
+    }
+  });
+
+  // Show/hide category filter (Overview only)
+  document.getElementById('categoryFilter').style.display =
+    tabId === 'overview' ? '' : 'none';
+
+  // Lazy-init charts/content for the activated tab
+  initTabContent(tabId);
+
+  // URL hash
+  if (pushState !== false) {
+    history.replaceState(null, '', '#' + tabId);
+  }
+}
+
+function initTabContent(tabId) {
+  if (tabInitialized[tabId]) {
+    // Tab was already initialized — resize any charts in case they were
+    // rendered while hidden (Chart.js may have zero dimensions)
+    resizeChartsInTab(tabId);
+    return;
+  }
+  tabInitialized[tabId] = true;
+
+  if (tabId === 'overview') {
+    buildCards('all');
+    buildScatterChart();
+  } else if (tabId === 'features') {
+    buildMatrix();
+    buildHeatmap();
+  } else if (tabId === 'pricing') {
+    buildPricingChart('bar');
+    buildPlatformChart('bar');
+  } else if (tabId === 'landing') {
+    buildHeroHeadlines();
+    buildCtaCards();
+    buildTrustSignalsChart();
+  } else if (tabId === 'seo') {
+    buildMetaTags();
+    buildKwHeatmap();
+    buildSeoScoreCards();
+    buildKwOpportunityChart();
+  }
+}
+
+function resizeChartsInTab(tabId) {
+  const chartMap = {
+    overview:  [/* scatterChart has no instance handle; it's fine — bubble chart */],
+    pricing:   [pricingChartInstance, platformChartInstance],
+  };
+  const charts = chartMap[tabId] || [];
+  charts.forEach(c => { if (c) c.resize(); });
+}
+
+// ─────────────────────────────────────────────
 //  INIT
 // ─────────────────────────────────────────────
+function updateHeaderHeight() {
+  const h = document.querySelector('.header').offsetHeight;
+  document.documentElement.style.setProperty('--header-h', h + 'px');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  buildCards('all');
-  buildMatrix();
-  buildPricingChart('bar');
-  buildPlatformChart('bar');
-  buildScatterChart();
-  buildHeatmap();
-  // New sections
-  buildHeroHeadlines();
-  buildCtaCards();
-  buildTrustSignalsChart();
-  buildMetaTags();
-  buildKwHeatmap();
-  buildSeoScoreCards();
-  buildKwOpportunityChart();
+  // Measure header for sticky tab nav positioning
+  updateHeaderHeight();
+  window.addEventListener('resize', updateHeaderHeight);
+
+  // Wire up tab buttons
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+  });
+
+  // Read URL hash on load
+  const hash = (window.location.hash || '').replace('#', '').toLowerCase();
+  const startTab = TAB_IDS.includes(hash) ? hash : 'overview';
+  activateTab(startTab, false);
 });
 </script>
-
-<div class="toast" id="toast2" style="display:none"></div>
 </body>
 </html>
