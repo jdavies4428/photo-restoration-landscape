@@ -619,17 +619,6 @@
       <div class="header-meta">Last updated: March 14, 2026 &nbsp;·&nbsp; 8 competitors tracked</div>
     </div>
     <div class="header-controls">
-      <select class="btn" id="categoryFilter" style="display:none">
-        <option value="all">All Categories</option>
-        <option value="Desktop Photo Editor">Desktop Photo Editor</option>
-        <option value="AI Design Tool">AI Design Tool</option>
-        <option value="AI Photo Editor">AI Photo Editor</option>
-        <option value="Photo Restoration">Photo Restoration</option>
-        <option value="Photo Scanning & Archival">Photo Scanning &amp; Archival</option>
-        <option value="Product Photography">Product Photography</option>
-        <option value="Photo Enhancement">Photo Enhancement</option>
-        <option value="All-in-One Creative">All-in-One Creative</option>
-      </select>
       <button class="btn primary" onclick="exportCSV()">Export CSV</button>
       <button class="btn" onclick="toggleTheme()" id="themeBtn">Light Mode</button>
     </div>
@@ -1112,10 +1101,6 @@ function buildCards(category) {
   });
 }
 
-document.getElementById('categoryFilter').addEventListener('change', function() {
-  activeCategory = this.value;
-  buildCards(activeCategory);
-});
 
 // ─────────────────────────────────────────────
 //  FEATURE MATRIX
@@ -2139,10 +2124,6 @@ function activateTab(tabId, pushState) {
       screen.classList.remove('active');
     }
   });
-
-  // Show/hide category filter (Overview only)
-  document.getElementById('categoryFilter').style.display =
-    tabId === 'overview' ? '' : 'none';
 
   // Lazy-init charts/content for the activated tab
   initTabContent(tabId);
