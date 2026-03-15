@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Restoration Landscape — Competitive Intelligence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #263550;
+      --border: #334155;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent: #3b82f6;
+
+      --skylum:    #3b82f6;
+      --dzine:     #8b5cf6;
+      --lift:      #f59e0b;
+      --renew:     #10b981;
+      --photomyne: #ef4444;
+      --photoroom: #06b6d4;
+      --remini:    #f97316;
+      --picsart:   #ec4899;
+    }
+
+    .light {
+      --bg-primary: #f1f5f9;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f8fafc;
+      --border: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 32px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .header h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .header h1 span {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .header-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--bg-card-hover); border-color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.primary:hover { opacity: 0.85; }
+    select.btn { appearance: none; padding-right: 28px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      gap: 32px;
+      padding: 16px 32px;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-item { display: flex; flex-direction: column; }
+    .stat-value { font-size: 24px; font-weight: 800; color: var(--accent); }
+    .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); }
+
+    /* ── MAIN LAYOUT ── */
+    .main { padding: 28px 32px; max-width: 1600px; margin: 0 auto; }
+
+    .section { margin-bottom: 40px; }
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .section-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .competitor-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .competitor-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-color, #3b82f6);
+    }
+    .competitor-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); border-color: var(--card-color, #3b82f6); }
+    .card-avatar {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+      background: var(--card-color, #3b82f6);
+    }
+    .card-name { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+    .card-tagline { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
+    .card-metric {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--card-color, #3b82f6);
+      background: color-mix(in srgb, var(--card-color, #3b82f6) 12%, transparent);
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .card-platforms {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .platform-badge {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .card-link {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .card-link:hover { text-decoration: underline; }
+    .card-category {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    /* ── CHART CONTAINERS ── */
+    .chart-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .chart-title { font-size: 14px; font-weight: 600; }
+    .chart-toggle { display: flex; gap: 6px; }
+    .toggle-btn {
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
+    .toggle-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .chart-wrap {
+      position: relative;
+    }
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .charts-row { grid-template-columns: 1fr; } }
+
+    /* ── FEATURE MATRIX ── */
+    .matrix-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 900px;
+    }
+    .matrix-table th {
+      background: var(--bg-card);
+      padding: 12px 16px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-primary);
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      white-space: nowrap;
+    }
+    .matrix-table th:first-child {
+      text-align: left;
+      min-width: 200px;
+      position: sticky;
+      left: 0;
+      z-index: 20;
+      background: var(--bg-card);
+    }
+    .matrix-table td {
+      padding: 10px 16px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .matrix-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: sticky;
+      left: 0;
+      background: var(--bg-primary);
+      z-index: 5;
+    }
+    .matrix-table tr:hover td { background: var(--bg-card-hover); }
+    .matrix-table tr:hover td:first-child { background: var(--bg-card-hover); }
+    .check { color: #10b981; font-size: 16px; }
+    .cross { color: #ef4444; font-size: 16px; }
+    .partial { color: #f59e0b; font-size: 14px; font-weight: 600; }
+    .col-header-name {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .col-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-bottom: 3px;
+    }
+    .feature-group th {
+      background: color-mix(in srgb, var(--accent) 8%, var(--bg-card));
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+    }
+
+    /* ── HEATMAP ── */
+    .heatmap-grid {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .heatmap-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      min-width: 700px;
+    }
+    .heatmap-table th {
+      padding: 10px 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .heatmap-table th:first-child { text-align: left; min-width: 160px; }
+    .heatmap-table td {
+      padding: 8px 12px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      font-size: 11px;
+      font-weight: 600;
+      transition: transform 0.15s;
+    }
+    .heatmap-table td:first-child {
+      text-align: left;
+      color: var(--text-secondary);
+      background: var(--bg-card);
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .heatmap-table td:hover { transform: scale(1.05); z-index: 2; position: relative; }
+    .heat-0  { background: #1e293b; color: #475569; }
+    .heat-1  { background: color-mix(in srgb, #3b82f6 15%, #1e293b); color: #93c5fd; }
+    .heat-2  { background: color-mix(in srgb, #3b82f6 35%, #1e293b); color: #bfdbfe; }
+    .heat-3  { background: color-mix(in srgb, #3b82f6 55%, #1e293b); color: #fff; }
+    .heat-full { background: #3b82f6; color: #fff; }
+
+    /* ── NOTIFICATION ── */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ── SCATTER LEGEND ── */
+    .scatter-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .header { padding: 16px 20px; }
+      .stats-bar { padding: 12px 20px; gap: 20px; }
+      .main { padding: 20px; }
+      .header h1 { font-size: 16px; }
+      .stat-value { font-size: 20px; }
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .section { animation: fadeInUp 0.4s ease both; }
+    .section:nth-child(2)  { animation-delay: 0.05s; }
+    .section:nth-child(3)  { animation-delay: 0.10s; }
+    .section:nth-child(4)  { animation-delay: 0.15s; }
+    .section:nth-child(5)  { animation-delay: 0.20s; }
+    .section:nth-child(6)  { animation-delay: 0.25s; }
+    .section:nth-child(7)  { animation-delay: 0.30s; }
+
+    .hidden { display: none !important; }
+
+    /* ── LANDING PAGE & SEO SECTIONS ── */
+    .pricing-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .pricing-badge.visible   { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+    .pricing-badge.linked    { background: rgba(245,158,11,0.15);  color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
+    .pricing-badge.hidden-pr { background: rgba(239,68,68,0.12);   color: #ef4444; border: 1px solid rgba(239,68,68,0.25); }
+
+    .cta-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-color, #3b82f6);
+    }
+    .cta-btn-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: color-mix(in srgb, var(--card-color, #3b82f6) 15%, transparent);
+      color: var(--card-color, #3b82f6);
+      border: 1px solid color-mix(in srgb, var(--card-color, #3b82f6) 35%, transparent);
+      margin-bottom: 8px;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .cta-stat-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .cta-stat-row span:last-child { font-weight: 600; color: var(--text-secondary); }
+
+    /* Len badge coloring for meta tags */
+    .len-good   { background: rgba(16,185,129,0.15); color: #10b981; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; }
+    .len-ok     { background: rgba(245,158,11,0.15);  color: #f59e0b; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; }
+    .len-bad    { background: rgba(239,68,68,0.12);   color: #ef4444; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; }
+
+    /* Keyword heatmap uses same heat-N classes but with blue intensity for frequency */
+    .kw-heat-0  { background: #1e293b; color: #475569; }
+    .kw-heat-1  { background: color-mix(in srgb, #3b82f6 18%, #1e293b); color: #93c5fd; }
+    .kw-heat-2  { background: color-mix(in srgb, #3b82f6 40%, #1e293b); color: #bfdbfe; }
+    .kw-heat-3  { background: color-mix(in srgb, #3b82f6 70%, #1e293b); color: #fff; }
+
+    .seo-score-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .seo-score-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-color, #3b82f6);
+    }
+    .seo-score-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      padding: 3px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .seo-score-row:last-child { border-bottom: none; }
+    .sco-g { color: #10b981; font-weight: 700; }
+    .sco-y { color: #f59e0b; font-weight: 700; }
+    .sco-r { color: #ef4444; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-top">
+    <div>
+      <h1><span>Photo Restoration Landscape</span> — Competitive Intelligence</h1>
+      <div class="header-meta">Last updated: March 14, 2026 &nbsp;·&nbsp; 8 competitors tracked</div>
+    </div>
+    <div class="header-controls">
+      <select class="btn" id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="Desktop Photo Editor">Desktop Photo Editor</option>
+        <option value="AI Design Tool">AI Design Tool</option>
+        <option value="AI Photo Editor">AI Photo Editor</option>
+        <option value="Photo Restoration">Photo Restoration</option>
+        <option value="Photo Scanning & Archival">Photo Scanning &amp; Archival</option>
+        <option value="Product Photography">Product Photography</option>
+        <option value="Photo Enhancement">Photo Enhancement</option>
+        <option value="All-in-One Creative">All-in-One Creative</option>
+      </select>
+      <button class="btn primary" onclick="exportCSV()">Export CSV</button>
+      <button class="btn" onclick="toggleTheme()" id="themeBtn">Light Mode</button>
+    </div>
+  </div>
+</header>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-value">8</span>
+    <span class="stat-label">Competitors</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">16</span>
+    <span class="stat-label">Features Tracked</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">5</span>
+    <span class="stat-label">Platforms Covered</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">100M+</span>
+    <span class="stat-label">Largest User Base</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">6/8</span>
+    <span class="stat-label">Offer Free Tier</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- SECTION 1: COMPETITOR CARDS -->
+  <section class="section" id="cardsSection">
+    <div class="section-title">Competitor Overview <span class="section-subtitle">Cards filtered by category</span></div>
+    <div class="cards-grid" id="cardsGrid"></div>
+  </section>
+
+  <!-- SECTION 2: FEATURE MATRIX -->
+  <section class="section">
+    <div class="section-title">Feature Matrix <span class="section-subtitle">Full capability comparison</span></div>
+    <div class="matrix-wrap">
+      <table class="matrix-table" id="featureMatrix"></table>
+    </div>
+  </section>
+
+  <!-- SECTION 3 & 4: PRICING + PLATFORM -->
+  <div class="charts-row section">
+    <div class="chart-card">
+      <div class="chart-header">
+        <span class="chart-title">Annual Cost Comparison (USD)</span>
+        <div class="chart-toggle">
+          <button class="toggle-btn active" onclick="setPricingChart('bar', this)">Bar</button>
+          <button class="toggle-btn" onclick="setPricingChart('radar', this)">Radar</button>
+        </div>
+      </div>
+      <div class="chart-wrap" style="height:300px">
+        <canvas id="pricingChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-header">
+        <span class="chart-title">Platform Coverage</span>
+        <div class="chart-toggle">
+          <button class="toggle-btn active" onclick="setPlatformChart('bar', this)">Bar</button>
+          <button class="toggle-btn" onclick="setPlatformChart('radar', this)">Radar</button>
+        </div>
+      </div>
+      <div class="chart-wrap" style="height:300px">
+        <canvas id="platformChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: MARKET POSITION MAP -->
+  <section class="section">
+    <div class="section-title">Market Position Map <span class="section-subtitle">Feature breadth vs. market reach (bubble size = user base)</span></div>
+    <div class="chart-card">
+      <div class="chart-wrap" style="height:380px">
+        <canvas id="scatterChart"></canvas>
+      </div>
+      <div class="scatter-legend" id="scatterLegend"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: AI CAPABILITIES HEATMAP -->
+  <section class="section">
+    <div class="section-title">AI Capabilities Heatmap <span class="section-subtitle">Depth of AI feature implementation (0 = none, 3 = deep)</span></div>
+    <div class="heatmap-grid">
+      <table class="heatmap-table" id="heatmapTable"></table>
+    </div>
+  </section>
+
+  <!-- SECTION 7: LANDING PAGE INTELLIGENCE -->
+  <section class="section">
+    <div class="section-title">Landing Page Intelligence <span class="section-subtitle">Hero messaging, CTAs, and conversion signals</span></div>
+
+    <!-- 7a: Hero Headlines Table -->
+    <div class="chart-card" style="margin-bottom:20px">
+      <div class="chart-header">
+        <span class="chart-title">Hero Headlines &amp; Primary CTAs</span>
+      </div>
+      <div class="matrix-wrap" style="border:none;border-radius:0">
+        <table class="matrix-table" style="min-width:800px;font-size:13px">
+          <thead>
+            <tr>
+              <th style="text-align:left;min-width:110px">Competitor</th>
+              <th style="text-align:left;min-width:220px">Hero Headline</th>
+              <th style="text-align:left;min-width:200px">Subheadline</th>
+              <th style="text-align:left;min-width:160px">Primary CTA</th>
+            </tr>
+          </thead>
+          <tbody id="heroHeadlinesBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 7b: CTA & Promotion Comparison Cards -->
+    <div style="margin-bottom:8px;font-size:13px;font-weight:600;color:var(--text-secondary)">CTA &amp; Promotion Signals</div>
+    <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));margin-bottom:20px" id="ctaCardsGrid"></div>
+
+    <!-- 7c: Trust Signals Bar Chart -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <span class="chart-title">Social Proof &amp; Trust Signal Count</span>
+      </div>
+      <div class="chart-wrap" style="height:260px">
+        <canvas id="trustSignalsChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: SEO COMPETITIVE ANALYSIS -->
+  <section class="section">
+    <div class="section-title">SEO Competitive Analysis <span class="section-subtitle">Meta tags, keyword targeting, and technical SEO</span></div>
+
+    <!-- 8a: Meta Tag Comparison Table -->
+    <div class="chart-card" style="margin-bottom:20px">
+      <div class="chart-header">
+        <span class="chart-title">Meta Tag Comparison</span>
+        <span style="font-size:11px;color:var(--text-muted)">Title: green 50-60 chars · yellow 40-70 · red otherwise &nbsp;|&nbsp; Desc: green 150-160 · yellow 120-170 · red otherwise</span>
+      </div>
+      <div class="matrix-wrap" style="border:none;border-radius:0">
+        <table class="matrix-table" style="min-width:900px;font-size:12px">
+          <thead>
+            <tr>
+              <th style="text-align:left;min-width:100px">Competitor</th>
+              <th style="text-align:left;min-width:260px">Title</th>
+              <th style="text-align:center;min-width:50px">Len</th>
+              <th style="text-align:left;min-width:260px">Description</th>
+              <th style="text-align:center;min-width:50px">Len</th>
+              <th style="text-align:center;min-width:55px">OG Tags</th>
+              <th style="text-align:center;min-width:70px">Twitter Card</th>
+              <th style="text-align:center;min-width:70px">Schema.org</th>
+            </tr>
+          </thead>
+          <tbody id="metaTagsBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 8b: Keyword Frequency Heatmap -->
+    <div class="chart-card" style="margin-bottom:20px">
+      <div class="chart-header">
+        <span class="chart-title">Keyword Frequency Heatmap</span>
+        <span style="font-size:11px;color:var(--text-muted)">Count per page · gray=0 · light blue=1-5 · medium=6-15 · dark=16+</span>
+      </div>
+      <div class="heatmap-grid" style="border:none">
+        <table class="heatmap-table" style="min-width:750px" id="kwHeatmapTable"></table>
+      </div>
+    </div>
+
+    <!-- 8c: SEO Score Cards -->
+    <div style="margin-bottom:8px;font-size:13px;font-weight:600;color:var(--text-secondary)">SEO Score Cards</div>
+    <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(190px,1fr));margin-bottom:20px" id="seoScoreCards"></div>
+
+    <!-- 8d: Keyword Opportunity Chart -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <span class="chart-title">Keyword Opportunity — Low-Competition Terms</span>
+        <span style="font-size:11px;color:var(--text-muted)">Terms targeted by 1-2 competitors only</span>
+      </div>
+      <div class="chart-wrap" style="height:280px">
+        <canvas id="kwOpportunityChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast">Copied to clipboard!</div>
+
+<script>
+// ─────────────────────────────────────────────
+//  DATA
+// ─────────────────────────────────────────────
+const COLORS = {
+  Skylum:    '#3b82f6',
+  Dzine:     '#8b5cf6',
+  Lift:      '#f59e0b',
+  Renew:     '#10b981',
+  Photomyne: '#ef4444',
+  Photoroom: '#06b6d4',
+  Remini:    '#f97316',
+  Picsart:   '#ec4899',
+};
+
+const competitors = [
+  {
+    name: 'Skylum',
+    category: 'Desktop Photo Editor',
+    tagline: 'AI-powered desktop photo editing',
+    platforms: ['Win', 'Mac', 'iOS', 'Android', 'Web'],
+    freeTier: false,
+    pricingNote: '~$89-119 one-time',
+    annualCostLow: 89,
+    annualCostHigh: 119,
+    rating: 4.8,
+    keyMetric: '1M+ customers',
+    site: 'https://skylum.com',
+    userBase: 1_000_000,
+    features: {
+      restoration: true, enhancement: true, bgRemoval: false,
+      aiGeneration: true, videoEnhancement: false, photoScanning: false,
+      colorization: true, batchProcessing: true, apiAvailable: false,
+      desktopApp: true, mobileApp: true, webApp: true,
+      freeTier: false, ecommerceFocus: false, genealogyFocus: false, aiModelCount: '10+'
+    }
+  },
+  {
+    name: 'Dzine',
+    category: 'AI Design Tool',
+    tagline: 'AI-powered creative design studio',
+    platforms: ['Web'],
+    freeTier: true,
+    pricingNote: 'Unknown subscription',
+    annualCostLow: null,
+    annualCostHigh: null,
+    rating: null,
+    keyMetric: 'N/A',
+    site: 'https://dzine.ai',
+    userBase: 500_000,
+    features: {
+      restoration: false, enhancement: true, bgRemoval: true,
+      aiGeneration: true, videoEnhancement: false, photoScanning: false,
+      colorization: false, batchProcessing: false, apiAvailable: false,
+      desktopApp: false, mobileApp: false, webApp: true,
+      freeTier: true, ecommerceFocus: false, genealogyFocus: false, aiModelCount: '5+'
+    }
+  },
+  {
+    name: 'Lift',
+    category: 'AI Photo Editor',
+    tagline: 'AI photo editor for everyone',
+    platforms: ['Web', 'iOS', 'Android'],
+    freeTier: true,
+    pricingNote: '~$100/yr estimated',
+    annualCostLow: 80,
+    annualCostHigh: 100,
+    rating: 4.8,
+    keyMetric: '13M+ downloads',
+    site: 'https://liftphoto.app',
+    userBase: 13_000_000,
+    features: {
+      restoration: true, enhancement: true, bgRemoval: true,
+      aiGeneration: false, videoEnhancement: false, photoScanning: false,
+      colorization: true, batchProcessing: false, apiAvailable: false,
+      desktopApp: false, mobileApp: true, webApp: true,
+      freeTier: true, ecommerceFocus: false, genealogyFocus: false, aiModelCount: '8+'
+    }
+  },
+  {
+    name: 'Renew',
+    category: 'Photo Restoration',
+    tagline: 'Photo restoration in seconds',
+    platforms: ['iOS', 'Android'],
+    freeTier: true,
+    pricingNote: '$9.99 one-time premium',
+    annualCostLow: 9.99,
+    annualCostHigh: 9.99,
+    rating: 4.6,
+    keyMetric: '1M+ photos restored',
+    site: 'https://renewapp.com',
+    userBase: 500_000,
+    features: {
+      restoration: true, enhancement: true, bgRemoval: false,
+      aiGeneration: false, videoEnhancement: false, photoScanning: false,
+      colorization: true, batchProcessing: false, apiAvailable: false,
+      desktopApp: false, mobileApp: true, webApp: false,
+      freeTier: true, ecommerceFocus: false, genealogyFocus: true, aiModelCount: '3+'
+    }
+  },
+  {
+    name: 'Photomyne',
+    category: 'Photo Scanning & Archival',
+    tagline: '500+ photos/hour scanning & AI archival',
+    platforms: ['iOS', 'Android', 'Web'],
+    freeTier: false,
+    pricingNote: '$14.99/mo or $59.99/yr',
+    annualCostLow: 59.99,
+    annualCostHigh: 179.88,
+    rating: null,
+    keyMetric: '500+ photos/hr scanning',
+    site: 'https://photomyne.com',
+    userBase: 5_000_000,
+    features: {
+      restoration: true, enhancement: true, bgRemoval: false,
+      aiGeneration: false, videoEnhancement: false, photoScanning: true,
+      colorization: true, batchProcessing: true, apiAvailable: false,
+      desktopApp: false, mobileApp: true, webApp: true,
+      freeTier: false, ecommerceFocus: false, genealogyFocus: true, aiModelCount: '5+'
+    }
+  },
+  {
+    name: 'Photoroom',
+    category: 'Product Photography',
+    tagline: 'AI product photography at scale',
+    platforms: ['iOS', 'Android', 'Web', 'Desktop'],
+    freeTier: true,
+    pricingNote: '~$120/yr Pro',
+    annualCostLow: 120,
+    annualCostHigh: 240,
+    rating: null,
+    keyMetric: '300M+ downloads',
+    site: 'https://photoroom.com',
+    userBase: 300_000_000,
+    features: {
+      restoration: false, enhancement: true, bgRemoval: true,
+      aiGeneration: true, videoEnhancement: false, photoScanning: false,
+      colorization: false, batchProcessing: true, apiAvailable: true,
+      desktopApp: true, mobileApp: true, webApp: true,
+      freeTier: true, ecommerceFocus: true, genealogyFocus: false, aiModelCount: '15+'
+    }
+  },
+  {
+    name: 'Remini',
+    category: 'Photo Enhancement',
+    tagline: 'Enhance, restore, reimagine photos',
+    platforms: ['iOS', 'Android', 'Web'],
+    freeTier: true,
+    pricingNote: '~$60/yr estimated',
+    annualCostLow: 60,
+    annualCostHigh: 60,
+    rating: null,
+    keyMetric: '100M MAU · 5B+ photos',
+    site: 'https://remini.ai',
+    userBase: 100_000_000,
+    features: {
+      restoration: true, enhancement: true, bgRemoval: false,
+      aiGeneration: true, videoEnhancement: true, photoScanning: false,
+      colorization: true, batchProcessing: false, apiAvailable: false,
+      desktopApp: false, mobileApp: true, webApp: true,
+      freeTier: true, ecommerceFocus: false, genealogyFocus: false, aiModelCount: '20+'
+    }
+  },
+  {
+    name: 'Picsart',
+    category: 'All-in-One Creative',
+    tagline: '150M+ creators, 1B+ edits/month',
+    platforms: ['iOS', 'Android', 'Web', 'Win'],
+    freeTier: true,
+    pricingNote: '$63/yr Pro · $210/yr Ultra',
+    annualCostLow: 63,
+    annualCostHigh: 210,
+    rating: null,
+    keyMetric: '150M+ creators',
+    site: 'https://picsart.com',
+    userBase: 150_000_000,
+    features: {
+      restoration: true, enhancement: true, bgRemoval: true,
+      aiGeneration: true, videoEnhancement: true, photoScanning: false,
+      colorization: true, batchProcessing: true, apiAvailable: true,
+      desktopApp: true, mobileApp: true, webApp: true,
+      freeTier: true, ecommerceFocus: false, genealogyFocus: false, aiModelCount: '25+'
+    }
+  },
+];
+
+// Feature row definitions
+const featureRows = [
+  { group: 'AI Capabilities',   key: 'restoration',       label: 'Photo Restoration / Repair' },
+  { group: 'AI Capabilities',   key: 'enhancement',       label: 'Photo Enhancement / Upscaling' },
+  { group: 'AI Capabilities',   key: 'bgRemoval',         label: 'Background Removal' },
+  { group: 'AI Capabilities',   key: 'aiGeneration',      label: 'AI Image Generation' },
+  { group: 'AI Capabilities',   key: 'videoEnhancement',  label: 'Video Enhancement / Generation' },
+  { group: 'AI Capabilities',   key: 'photoScanning',     label: 'Photo Scanning' },
+  { group: 'AI Capabilities',   key: 'colorization',      label: 'Colorization (B&W to Color)' },
+  { group: 'Workflow',           key: 'batchProcessing',   label: 'Batch Processing' },
+  { group: 'Workflow',           key: 'apiAvailable',      label: 'API Available' },
+  { group: 'Platforms',          key: 'desktopApp',        label: 'Desktop App' },
+  { group: 'Platforms',          key: 'mobileApp',         label: 'Mobile App' },
+  { group: 'Platforms',          key: 'webApp',            label: 'Web App' },
+  { group: 'Business',           key: 'freeTier',          label: 'Free Tier Available' },
+  { group: 'Business',           key: 'ecommerceFocus',    label: 'E-commerce Focus' },
+  { group: 'Business',           key: 'genealogyFocus',    label: 'Genealogy / Family Focus' },
+  { group: 'Meta',               key: 'aiModelCount',      label: 'AI Model Count' },
+];
+
+// AI heatmap data: 0=none, 1=basic, 2=good, 3=deep
+const aiCapabilities = [
+  { label: 'Text-to-Image Generation', data: { Skylum: 1, Dzine: 3, Lift: 0, Renew: 0, Photomyne: 0, Photoroom: 2, Remini: 2, Picsart: 3 } },
+  { label: 'Photo Enhancement',        data: { Skylum: 3, Dzine: 1, Lift: 3, Renew: 2, Photomyne: 2, Photoroom: 2, Remini: 3, Picsart: 2 } },
+  { label: 'Background Removal',       data: { Skylum: 1, Dzine: 2, Lift: 2, Renew: 0, Photomyne: 0, Photoroom: 3, Remini: 1, Picsart: 3 } },
+  { label: 'Colorization',             data: { Skylum: 2, Dzine: 0, Lift: 2, Renew: 2, Photomyne: 2, Photoroom: 0, Remini: 2, Picsart: 2 } },
+  { label: 'Face Enhancement',         data: { Skylum: 2, Dzine: 1, Lift: 2, Renew: 3, Photomyne: 1, Photoroom: 1, Remini: 3, Picsart: 2 } },
+  { label: 'Video Processing',         data: { Skylum: 0, Dzine: 0, Lift: 0, Renew: 0, Photomyne: 0, Photoroom: 0, Remini: 2, Picsart: 2 } },
+  { label: 'Style Transfer',           data: { Skylum: 2, Dzine: 2, Lift: 1, Renew: 0, Photomyne: 0, Photoroom: 1, Remini: 1, Picsart: 3 } },
+  { label: 'Generative Fill',          data: { Skylum: 2, Dzine: 2, Lift: 0, Renew: 0, Photomyne: 0, Photoroom: 2, Remini: 1, Picsart: 2 } },
+  { label: 'OCR / Text Recognition',  data: { Skylum: 0, Dzine: 0, Lift: 0, Renew: 0, Photomyne: 3, Photoroom: 0, Remini: 0, Picsart: 1 } },
+  { label: 'Batch AI Processing',      data: { Skylum: 2, Dzine: 0, Lift: 0, Renew: 0, Photomyne: 3, Photoroom: 3, Remini: 0, Picsart: 2 } },
+];
+
+// ─────────────────────────────────────────────
+//  COMPETITOR CARDS
+// ─────────────────────────────────────────────
+let activeCategory = 'all';
+
+function buildCards(category) {
+  const grid = document.getElementById('cardsGrid');
+  grid.innerHTML = '';
+  const filtered = category === 'all' ? competitors : competitors.filter(c => c.category === category);
+
+  filtered.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'competitor-card';
+    card.style.setProperty('--card-color', COLORS[c.name]);
+
+    const platforms = c.platforms.map(p =>
+      `<span class="platform-badge">${p}</span>`
+    ).join('');
+
+    card.innerHTML = `
+      <div class="card-avatar" style="background:${COLORS[c.name]}">${c.name[0]}</div>
+      <div class="card-category">${c.category}</div>
+      <div class="card-name">${c.name}</div>
+      <div class="card-tagline">${c.tagline}</div>
+      ${c.keyMetric !== 'N/A' ? `<span class="card-metric">${c.keyMetric}</span>` : ''}
+      <div class="card-platforms">${platforms}</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+        <span style="font-size:12px;color:var(--text-muted)">${c.pricingNote}</span>
+        ${c.rating ? `<span style="font-size:12px;font-weight:600;color:#f59e0b">★ ${c.rating}</span>` : ''}
+      </div>
+      <a class="card-link" href="${c.site}" target="_blank" rel="noopener" style="margin-top:10px;display:block">Visit Site →</a>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById('categoryFilter').addEventListener('change', function() {
+  activeCategory = this.value;
+  buildCards(activeCategory);
+});
+
+// ─────────────────────────────────────────────
+//  FEATURE MATRIX
+// ─────────────────────────────────────────────
+function buildMatrix() {
+  const table = document.getElementById('featureMatrix');
+  // Header row
+  let header = '<thead><tr><th>Feature</th>';
+  competitors.forEach(c => {
+    header += `<th>
+      <span class="col-dot" style="background:${COLORS[c.name]}"></span>
+      <span class="col-header-name">${c.name}</span>
+    </th>`;
+  });
+  header += '</tr></thead>';
+
+  let body = '<tbody>';
+  let lastGroup = null;
+  featureRows.forEach(row => {
+    if (row.group !== lastGroup) {
+      lastGroup = row.group;
+      body += `<tr class="feature-group"><th colspan="${competitors.length + 1}">${row.group}</th></tr>`;
+    }
+    body += `<tr><td>${row.label}</td>`;
+    competitors.forEach(c => {
+      const val = c.features[row.key];
+      if (typeof val === 'boolean') {
+        body += val
+          ? `<td><span class="check">✓</span></td>`
+          : `<td><span class="cross">✗</span></td>`;
+      } else {
+        body += `<td><span style="font-size:12px;font-weight:600;color:var(--text-secondary)">${val}</span></td>`;
+      }
+    });
+    body += '</tr>';
+  });
+  body += '</tbody>';
+
+  table.innerHTML = header + body;
+}
+
+// ─────────────────────────────────────────────
+//  PRICING CHART
+// ─────────────────────────────────────────────
+let pricingChartInstance = null;
+
+function buildPricingChart(type) {
+  const ctx = document.getElementById('pricingChart').getContext('2d');
+  if (pricingChartInstance) pricingChartInstance.destroy();
+
+  const labels = competitors.map(c => c.name);
+  const lowData = competitors.map(c => c.annualCostLow ?? 0);
+  const highData = competitors.map(c => {
+    if (c.annualCostHigh === null) return 0;
+    return Math.max(0, c.annualCostHigh - (c.annualCostLow ?? 0));
+  });
+  const bgColors = competitors.map(c => COLORS[c.name]);
+
+  const isRadar = type === 'radar';
+  const maxVal = Math.max(...competitors.map(c => c.annualCostHigh ?? 0));
+
+  pricingChartInstance = new Chart(ctx, {
+    type: isRadar ? 'radar' : 'bar',
+    data: {
+      labels,
+      datasets: isRadar
+        ? [{
+            label: 'Annual Cost (Low)',
+            data: competitors.map(c => c.annualCostLow ?? 0),
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59,130,246,0.15)',
+            pointBackgroundColor: bgColors,
+            pointRadius: 4,
+          }]
+        : [
+            {
+              label: 'Base Cost',
+              data: lowData,
+              backgroundColor: bgColors.map(c => c + 'cc'),
+              borderColor: bgColors,
+              borderWidth: 1,
+              borderRadius: 4,
+            },
+            {
+              label: 'High Tier Addon',
+              data: highData,
+              backgroundColor: bgColors.map(c => c + '55'),
+              borderColor: bgColors.map(c => c + '88'),
+              borderWidth: 1,
+              borderRadius: 4,
+            }
+          ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const c = competitors[ctx.dataIndex];
+              if (!c) return '';
+              if (c.annualCostLow === null) return `${c.name}: Unknown`;
+              if (c.annualCostLow === c.annualCostHigh) return `${c.name}: $${c.annualCostLow}`;
+              return `${c.name}: $${c.annualCostLow} – $${c.annualCostHigh}`;
+            }
+          }
+        }
+      },
+      scales: isRadar ? {
+        r: {
+          ticks: { color: '#64748b', font: { size: 10 } },
+          grid: { color: '#334155' },
+          pointLabels: { color: '#94a3b8', font: { size: 11 } },
+          suggestedMax: maxVal + 20,
+        }
+      } : {
+        x: {
+          stacked: true,
+          ticks: { color: '#94a3b8', font: { size: 11 } },
+          grid: { color: '#334155' },
+        },
+        y: {
+          stacked: true,
+          ticks: {
+            color: '#94a3b8',
+            font: { size: 11 },
+            callback: v => `$${v}`
+          },
+          grid: { color: '#1e293b' },
+        }
+      }
+    }
+  });
+}
+
+function setPricingChart(type, btn) {
+  document.querySelectorAll('#pricingToggle .toggle-btn').forEach(b => b.classList.remove('active'));
+  if (btn) {
+    btn.classList.add('active');
+    btn.closest('.chart-toggle').querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  buildPricingChart(type);
+}
+
+// ─────────────────────────────────────────────
+//  PLATFORM CHART
+// ─────────────────────────────────────────────
+let platformChartInstance = null;
+const PLATFORM_LIST = ['iOS', 'Android', 'Web', 'Win', 'Mac', 'Desktop'];
+
+function buildPlatformChart(type) {
+  const ctx = document.getElementById('platformChart').getContext('2d');
+  if (platformChartInstance) platformChartInstance.destroy();
+
+  const isRadar = type === 'radar';
+  const platformCounts = competitors.map(c =>
+    c.platforms.filter(p => PLATFORM_LIST.includes(p)).length
+  );
+
+  if (isRadar) {
+    // Radar: each axis is a platform, each dataset is a competitor
+    const datasets = competitors.map(c => ({
+      label: c.name,
+      data: PLATFORM_LIST.map(p => c.platforms.includes(p) ? 1 : 0),
+      borderColor: COLORS[c.name],
+      backgroundColor: COLORS[c.name] + '22',
+      pointBackgroundColor: COLORS[c.name],
+      pointRadius: 3,
+      borderWidth: 2,
+    }));
+    platformChartInstance = new Chart(ctx, {
+      type: 'radar',
+      data: { labels: PLATFORM_LIST, datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          r: {
+            min: 0, max: 1,
+            ticks: { display: false },
+            grid: { color: '#334155' },
+            pointLabels: { color: '#94a3b8', font: { size: 12 } }
+          }
+        }
+      }
+    });
+  } else {
+    platformChartInstance = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: competitors.map(c => c.name),
+        datasets: [{
+          label: 'Platform Count',
+          data: platformCounts,
+          backgroundColor: competitors.map(c => COLORS[c.name] + 'cc'),
+          borderColor: competitors.map(c => COLORS[c.name]),
+          borderWidth: 1,
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const c = competitors[ctx.dataIndex];
+                return `${c.name}: ${c.platforms.join(', ')} (${c.platforms.length} platforms)`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#94a3b8', font: { size: 11 }, stepSize: 1 },
+            grid: { color: '#1e293b' },
+            max: 6,
+          },
+          y: {
+            ticks: { color: '#94a3b8', font: { size: 11 } },
+            grid: { color: '#334155' },
+          }
+        }
+      }
+    });
+  }
+}
+
+function setPlatformChart(type, btn) {
+  if (btn) {
+    btn.closest('.chart-toggle').querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  buildPlatformChart(type);
+}
+
+// ─────────────────────────────────────────────
+//  SCATTER / BUBBLE CHART
+// ─────────────────────────────────────────────
+function buildScatterChart() {
+  const ctx = document.getElementById('scatterChart').getContext('2d');
+
+  // Feature breadth = count of boolean true features
+  function featureBreadth(c) {
+    return featureRows.filter(r => typeof c.features[r.key] === 'boolean' && c.features[r.key]).length;
+  }
+
+  // Market reach on a scale 1-10 (log-based)
+  function marketReach(userBase) {
+    return Math.log10(userBase);
+  }
+
+  // Bubble size: radius proportional to sqrt(userBase), capped
+  function bubbleR(userBase) {
+    return Math.min(40, Math.max(8, Math.sqrt(userBase) / 200));
+  }
+
+  const legend = document.getElementById('scatterLegend');
+  legend.innerHTML = '';
+
+  const datasets = competitors.map(c => {
+    legend.innerHTML += `<div class="legend-item">
+      <div class="legend-dot" style="background:${COLORS[c.name]}"></div>
+      <span>${c.name}</span>
+    </div>`;
+
+    return {
+      label: c.name,
+      data: [{
+        x: featureBreadth(c),
+        y: parseFloat(marketReach(c.userBase).toFixed(2)),
+        r: bubbleR(c.userBase),
+      }],
+      backgroundColor: COLORS[c.name] + 'aa',
+      borderColor: COLORS[c.name],
+      borderWidth: 2,
+    };
+  });
+
+  new Chart(ctx, {
+    type: 'bubble',
+    data: { datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const c = competitors.find(x => x.name === ctx.dataset.label);
+              return [
+                `${c.name}`,
+                `Feature breadth: ${ctx.parsed.x}`,
+                `User base: ${c.userBase.toLocaleString()}`,
+              ];
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Feature Breadth (# of features)',
+            color: '#64748b',
+            font: { size: 12 }
+          },
+          ticks: { color: '#94a3b8', stepSize: 1 },
+          grid: { color: '#1e293b' },
+          min: 0, max: 16
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'Market Reach (log₁₀ users)',
+            color: '#64748b',
+            font: { size: 12 }
+          },
+          ticks: {
+            color: '#94a3b8',
+            callback: v => {
+              const map = { 5: '100K', 6: '1M', 7: '10M', 8: '100M' };
+              return map[v] || `10^${v}`;
+            }
+          },
+          grid: { color: '#1e293b' },
+          min: 4.5, max: 8.7
+        }
+      }
+    }
+  });
+}
+
+// ─────────────────────────────────────────────
+//  AI HEATMAP TABLE
+// ─────────────────────────────────────────────
+function buildHeatmap() {
+  const table = document.getElementById('heatmapTable');
+  const names = competitors.map(c => c.name);
+
+  const heatLabels = ['None', 'Basic', 'Good', 'Deep'];
+
+  let html = '<thead><tr><th>AI Capability</th>';
+  names.forEach(n => {
+    html += `<th><span class="col-dot" style="background:${COLORS[n]}"></span><br>${n}</th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  aiCapabilities.forEach(row => {
+    html += `<tr><td>${row.label}</td>`;
+    names.forEach(n => {
+      const val = row.data[n];
+      const heatClass = val === 0 ? 'heat-0' : val === 1 ? 'heat-1' : val === 2 ? 'heat-2' : 'heat-full';
+      const labelText = heatLabels[val];
+      html += `<td class="${heatClass}" title="${n}: ${labelText}">${labelText}</td>`;
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody>';
+  table.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
+//  EXPORT CSV
+// ─────────────────────────────────────────────
+function exportCSV() {
+  const headers = ['Feature', ...competitors.map(c => c.name)];
+  const rows = [headers.join(',')];
+
+  featureRows.forEach(row => {
+    const cells = [row.label];
+    competitors.forEach(c => {
+      const val = c.features[row.key];
+      cells.push(typeof val === 'boolean' ? (val ? 'Yes' : 'No') : val);
+    });
+    rows.push(cells.join(','));
+  });
+
+  // Add pricing row
+  rows.push(['Annual Cost (Low)', ...competitors.map(c => c.annualCostLow ?? 'Unknown')].join(','));
+  rows.push(['Annual Cost (High)', ...competitors.map(c => c.annualCostHigh ?? 'Unknown')].join(','));
+  rows.push(['Rating', ...competitors.map(c => c.rating ?? 'N/A')].join(','));
+  rows.push(['Key Metric', ...competitors.map(c => c.keyMetric)].join(','));
+
+  const csv = rows.join('\n');
+
+  try {
+    navigator.clipboard.writeText(csv).then(() => showToast('CSV copied to clipboard!'));
+  } catch {
+    // Fallback
+    const a = document.createElement('a');
+    a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+    a.download = 'photo-restoration-landscape.csv';
+    a.click();
+    showToast('CSV downloaded!');
+  }
+}
+
+// ─────────────────────────────────────────────
+//  THEME TOGGLE
+// ─────────────────────────────────────────────
+let isDark = true;
+function toggleTheme() {
+  isDark = !isDark;
+  document.body.classList.toggle('light', !isDark);
+  document.getElementById('themeBtn').textContent = isDark ? 'Light Mode' : 'Dark Mode';
+}
+
+// ─────────────────────────────────────────────
+//  TOAST
+// ─────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ─────────────────────────────────────────────
+//  LANDING PAGE DATA
+// ─────────────────────────────────────────────
+const landingData = [
+  {
+    name: 'Skylum',
+    heroHeadline: 'Edit photos effortlessly with AI-powered software',
+    heroSubheadline: 'Choose a cross-device editing Ecosystem, or stay with the full desktop power',
+    primaryCta: null,
+    totalCtas: 0,
+    promotions: ['Deals &amp; offers (discount)'],
+    pricingVisibility: 'linked (not on page)',
+    trustSignalCount: 2,
+    hasFreeTrialMention: false,
+  },
+  {
+    name: 'Dzine',
+    heroHeadline: 'All-in-One Image &amp; Video Studio',
+    heroSubheadline: 'From Ideas to Professional Visual Projects',
+    primaryCta: 'Start for FREE today',
+    totalCtas: 3,
+    promotions: ['7-day free trial'],
+    pricingVisibility: 'linked (not on page)',
+    trustSignalCount: 0,
+    hasFreeTrialMention: true,
+  },
+  {
+    name: 'Lift',
+    heroHeadline: 'Edit, enhance &amp; create stunning images with AI – instantly',
+    heroSubheadline: 'Trusted by millions worldwide',
+    primaryCta: null,
+    totalCtas: 0,
+    promotions: [],
+    pricingVisibility: 'linked (not on page)',
+    trustSignalCount: 0,
+    hasFreeTrialMention: false,
+  },
+  {
+    name: 'Renew',
+    heroHeadline: 'Restore Old Damaged Photos with the Renew APP',
+    heroSubheadline: 'Bring Your Memories Back to Life with AI',
+    primaryCta: 'Download on the App Store',
+    totalCtas: 1,
+    promotions: ['Free trial mentioned'],
+    pricingVisibility: 'mentioned but not shown',
+    trustSignalCount: 2,
+    hasFreeTrialMention: true,
+  },
+  {
+    name: 'Photomyne',
+    heroHeadline: 'Make your past a present',
+    heroSubheadline: 'The perfect home for scanning old memories and preserving them for your family\'s future.',
+    primaryCta: 'Try for free',
+    totalCtas: 10,
+    promotions: ['3-day free trial', 'Cancel anytime'],
+    pricingVisibility: 'visible on page',
+    trustSignalCount: 2,
+    hasFreeTrialMention: true,
+  },
+  {
+    name: 'Photoroom',
+    heroHeadline: 'Create pro visuals that sell',
+    heroSubheadline: 'Transform ordinary product shots into scroll-stopping visuals that drive clicks, trust, and conversions.',
+    primaryCta: 'Download iOS App',
+    totalCtas: 7,
+    promotions: ['Free Pro trial'],
+    pricingVisibility: 'linked (not on page)',
+    trustSignalCount: 0,
+    hasFreeTrialMention: true,
+  },
+  {
+    name: 'Remini',
+    heroHeadline: 'The only photo and video enhancer you\'ll ever need',
+    heroSubheadline: 'Generate photos of yourself, with AI',
+    primaryCta: null,
+    totalCtas: 0,
+    promotions: [],
+    pricingVisibility: 'visible on page',
+    trustSignalCount: 0,
+    hasFreeTrialMention: false,
+  },
+  {
+    name: 'Picsart',
+    heroHeadline: 'Built for creators, marketers, and teams',
+    heroSubheadline: 'Make content that gets your vibe.',
+    primaryCta: 'Get started',
+    totalCtas: 16,
+    promotions: [],
+    pricingVisibility: 'visible on page',
+    trustSignalCount: 0,
+    hasFreeTrialMention: false,
+  },
+];
+
+// ─────────────────────────────────────────────
+//  SEO DATA
+// ─────────────────────────────────────────────
+const seoData = [
+  {
+    name: 'Skylum',
+    title: 'Skylum: Your Gateway to Creative Imaging',
+    titleLength: 40,
+    description: 'Discover the next level of photo editing with Skylum\'s innovative software solutions. Whether you\'re a seasoned professional or an amateur enthusiast, our powerful tools empower you to enhance your photography.',
+    descriptionLength: 210,
+    hasOG: true,
+    hasTwitterCard: false,
+    hasSchema: true,
+    h1Count: 1,
+    hasHreflang: true,
+    internalLinks: 254,
+  },
+  {
+    name: 'Dzine',
+    title: 'Dzine - The Most Controllable AI Image &amp; Design Tool',
+    titleLength: 52,
+    description: 'Transform design with Dzine: the most controllable AI design tool. Enjoy image generation and editing on our all-in-one online free platform.',
+    descriptionLength: 141,
+    hasOG: false,
+    hasTwitterCard: false,
+    hasSchema: true,
+    h1Count: 1,
+    hasHreflang: false,
+    internalLinks: 151,
+  },
+  {
+    name: 'Lift',
+    title: 'Aumenta Tu Creatividad con Lift — Herramientas de IA para Creación de Contenido',
+    titleLength: 79,
+    description: 'Lift te ayuda a crear contenido de alta calidad con IA. Usa nuestro editor web o aplicaciones móviles para editar imágenes, videos y más — todo en un solo lugar. ¡Pruébalo gratis!',
+    descriptionLength: 179,
+    hasOG: true,
+    hasTwitterCard: true,
+    hasSchema: true,
+    h1Count: 1,
+    hasHreflang: true,
+    internalLinks: 179,
+  },
+  {
+    name: 'Renew',
+    title: 'The Best Photo Recovery App to Restore Old Damaged Photos - Renew APP',
+    titleLength: 69,
+    description: 'Looking to restore old damaged photos? Renew APP is the best photo recovery app that brings your faded memories back to life with powerful picture restoration technology.',
+    descriptionLength: 170,
+    hasOG: true,
+    hasTwitterCard: true,
+    hasSchema: true,
+    h1Count: 1,
+    hasHreflang: true,
+    internalLinks: 21,
+  },
+  {
+    name: 'Photomyne',
+    title: 'Photomyne: Save &amp; Cherish Family Memories Forever',
+    titleLength: 49,
+    description: 'Scan, enhance, and celebrate your family',
+    descriptionLength: 40,
+    hasOG: false,
+    hasTwitterCard: false,
+    hasSchema: false,
+    h1Count: 1,
+    hasHreflang: false,
+    internalLinks: 98,
+  },
+  {
+    name: 'Photoroom',
+    title: 'AI-Powered Photo Editor and Listing Studio for Product Photography | Photoroom',
+    titleLength: 78,
+    description: 'AI-powered photo editing tool and listing studio for quick, professional-quality visuals tailored to e-commerce businesses and social media creators. It helps automate image creation, format for multiple marketplaces, and produce marketplace-ready listings at scale.',
+    descriptionLength: 266,
+    hasOG: true,
+    hasTwitterCard: true,
+    hasSchema: true,
+    h1Count: 1,
+    hasHreflang: true,
+    internalLinks: 152,
+  },
+  {
+    name: 'Remini',
+    title: 'Remini - AI Photo Enhancer',
+    titleLength: 26,
+    description: 'Remini uses innovative, state-of-the-art AI technology to transform your old photos into HD masterpieces.',
+    descriptionLength: 105,
+    hasOG: true,
+    hasTwitterCard: false,
+    hasSchema: false,
+    h1Count: 1,
+    hasHreflang: false,
+    internalLinks: 41,
+  },
+  {
+    name: 'Picsart',
+    title: 'Picsart: The AI Creative Platform',
+    titleLength: 33,
+    description: 'Picsart is an all-in-one creative platform with a wide selection of free AI design tools. Create content fast with expert-crafted templates, built-in asset libraries, and generative AI tools.',
+    descriptionLength: 191,
+    hasOG: true,
+    hasTwitterCard: true,
+    hasSchema: true,
+    h1Count: 1,
+    hasHreflang: false,
+    internalLinks: 165,
+  },
+];
+
+// Keyword frequency matrix (selected display keywords)
+const kwHeatmapRows = [
+  { label: 'photo restoration', key: 'photo restoration' },
+  { label: 'old photos',        key: 'old photos' },
+  { label: 'photo enhancement', key: 'photo enhancement' },
+  { label: 'enhance',           key: 'enhance' },
+  { label: 'AI',                key: 'AI' },
+  { label: 'scan / scanning',   key: 'scan' },
+  { label: 'colorize',          key: 'colorize' },
+  { label: 'background removal',key: 'background removal' },
+  { label: 'photo editing',     key: 'photo editing' },
+  { label: 'free',              key: 'free' },
+  { label: 'face / portrait',   key: 'face' },
+  { label: 'video',             key: 'video' },
+  { label: 'e-commerce',        key: 'e-commerce' },
+  { label: 'family / memories', key: 'family' },
+];
+
+const kwFreqMatrix = {
+  'photo restoration': { Skylum:1,  Dzine:0,   Lift:0,  Renew:18, Photomyne:0,  Photoroom:0,  Remini:0,   Picsart:0   },
+  'old photos':        { Skylum:0,  Dzine:0,   Lift:3,  Renew:15, Photomyne:2,  Photoroom:0,  Remini:12,  Picsart:0   },
+  'photo enhancement': { Skylum:0,  Dzine:0,   Lift:0,  Renew:2,  Photomyne:0,  Photoroom:0,  Remini:2,   Picsart:0   },
+  'enhance':           { Skylum:5,  Dzine:8,   Lift:30, Renew:10, Photomyne:5,  Photoroom:4,  Remini:109, Picsart:35  },
+  'AI':                { Skylum:77, Dzine:446, Lift:543,Renew:57, Photomyne:72, Photoroom:252,Remini:82,  Picsart:940 },
+  'scan':              { Skylum:1,  Dzine:0,   Lift:0,  Renew:0,  Photomyne:72, Photoroom:0,  Remini:0,   Picsart:5   },
+  'colorize':          { Skylum:0,  Dzine:0,   Lift:10, Renew:3,  Photomyne:23, Photoroom:0,  Remini:0,   Picsart:0   },
+  'background removal':{ Skylum:3,  Dzine:0,   Lift:2,  Renew:0,  Photomyne:0,  Photoroom:3,  Remini:0,   Picsart:4   },
+  'photo editing':     { Skylum:10, Dzine:0,   Lift:1,  Renew:2,  Photomyne:0,  Photoroom:19, Remini:4,   Picsart:6   },
+  'free':              { Skylum:2,  Dzine:47,  Lift:4,  Renew:5,  Photomyne:92, Photoroom:74, Remini:4,   Picsart:196 },
+  'face':              { Skylum:4,  Dzine:12,  Lift:15, Renew:6,  Photomyne:4,  Photoroom:25, Remini:22,  Picsart:68  },
+  'video':             { Skylum:0,  Dzine:80,  Lift:3,  Renew:2,  Photomyne:33, Photoroom:36, Remini:32,  Picsart:252 },
+  'e-commerce':        { Skylum:1,  Dzine:0,   Lift:1,  Renew:0,  Photomyne:0,  Photoroom:14, Remini:4,   Picsart:13  },
+  'family':            { Skylum:1,  Dzine:30,  Lift:0,  Renew:6,  Photomyne:13, Photoroom:0,  Remini:2,   Picsart:1   },
+};
+
+const kwOpportunities = [
+  { keyword: 'photo restoration',  usedBy: ['Skylum', 'Renew'],           competitorCount: 2 },
+  { keyword: 'photo enhancement',  usedBy: ['Renew', 'Remini'],           competitorCount: 2 },
+  { keyword: 'artificial intelligence', usedBy: ['Skylum'],               competitorCount: 1 },
+  { keyword: 'scanning',           usedBy: ['Photomyne'],                 competitorCount: 1 },
+  { keyword: 'digitize',           usedBy: ['Photomyne'],                 competitorCount: 1 },
+  { keyword: 'colorization',       usedBy: ['Renew', 'Photomyne'],        competitorCount: 2 },
+  { keyword: 'selfie',             usedBy: ['Lift', 'Picsart'],           competitorCount: 2 },
+  { keyword: 'product photo',      usedBy: ['Photoroom', 'Picsart'],      competitorCount: 2 },
+  { keyword: 'heritage',           usedBy: ['Remini'],                    competitorCount: 1 },
+];
+
+// ─────────────────────────────────────────────
+//  BUILD: HERO HEADLINES TABLE
+// ─────────────────────────────────────────────
+function buildHeroHeadlines() {
+  const tbody = document.getElementById('heroHeadlinesBody');
+  let html = '';
+  landingData.forEach(d => {
+    const color = COLORS[d.name];
+    html += `<tr>
+      <td style="text-align:left">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="width:10px;height:10px;border-radius:50%;background:${color};flex-shrink:0;display:inline-block"></span>
+          <span style="font-weight:600">${d.name}</span>
+        </div>
+      </td>
+      <td style="text-align:left;font-size:12px;color:var(--text-primary)">${d.heroHeadline}</td>
+      <td style="text-align:left;font-size:12px;color:var(--text-secondary)">${d.heroSubheadline}</td>
+      <td style="text-align:left">
+        ${d.primaryCta
+          ? `<span class="cta-btn-pill" style="--card-color:${color}">${d.primaryCta}</span>`
+          : `<span style="font-size:11px;color:var(--text-muted);font-style:italic">None detected</span>`
+        }
+      </td>
+    </tr>`;
+  });
+  tbody.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
+//  BUILD: CTA & PROMOTION CARDS
+// ─────────────────────────────────────────────
+function buildCtaCards() {
+  const grid = document.getElementById('ctaCardsGrid');
+  let html = '';
+
+  landingData.forEach(d => {
+    const color = COLORS[d.name];
+
+    // Pricing badge
+    let pricingClass, pricingLabel;
+    if (d.pricingVisibility === 'visible on page') {
+      pricingClass = 'visible';
+      pricingLabel = 'Pricing visible';
+    } else if (d.pricingVisibility === 'linked (not on page)') {
+      pricingClass = 'linked';
+      pricingLabel = 'Pricing linked';
+    } else {
+      pricingClass = 'hidden-pr';
+      pricingLabel = 'Pricing not shown';
+    }
+
+    const promoText = d.promotions.length > 0
+      ? d.promotions.map(p => `<span style="font-size:10px;color:var(--text-secondary)">• ${p}</span>`).join('<br>')
+      : `<span style="font-size:10px;color:var(--text-muted);font-style:italic">No promotions</span>`;
+
+    html += `<div class="cta-card" style="--card-color:${color}">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="width:28px;height:28px;border-radius:7px;background:${color};display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0">${d.name[0]}</span>
+        <span style="font-weight:700;font-size:13px">${d.name}</span>
+      </div>
+      ${d.primaryCta
+        ? `<div class="cta-btn-pill" style="--card-color:${color};display:block;text-align:center;margin-bottom:10px">${d.primaryCta}</div>`
+        : `<div style="text-align:center;font-size:11px;color:var(--text-muted);font-style:italic;margin-bottom:10px">No primary CTA</div>`
+      }
+      <div class="cta-stat-row"><span>Total CTAs</span><span>${d.totalCtas}</span></div>
+      <div class="cta-stat-row"><span>Free trial</span><span>${d.hasFreeTrialMention ? '<span class="sco-g">Yes</span>' : '<span style="color:var(--text-muted)">No</span>'}</span></div>
+      <div class="cta-stat-row"><span>Trust signals</span><span>${d.trustSignalCount}</span></div>
+      <div style="margin-top:8px"><span class="pricing-badge ${pricingClass}">${pricingLabel}</span></div>
+      <div style="margin-top:8px;line-height:1.6">${promoText}</div>
+    </div>`;
+  });
+
+  grid.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
+//  BUILD: TRUST SIGNALS BAR CHART
+// ─────────────────────────────────────────────
+function buildTrustSignalsChart() {
+  const ctx = document.getElementById('trustSignalsChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: landingData.map(d => d.name),
+      datasets: [{
+        label: 'Trust Signals',
+        data: landingData.map(d => d.trustSignalCount),
+        backgroundColor: landingData.map(d => COLORS[d.name] + 'cc'),
+        borderColor: landingData.map(d => COLORS[d.name]),
+        borderWidth: 1,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.raw} trust signal${ctx.raw !== 1 ? 's' : ''} detected`
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: '#94a3b8', font: { size: 11 }, stepSize: 1 },
+          grid: { color: '#1e293b' },
+          min: 0,
+          max: 3,
+        },
+        y: {
+          ticks: { color: '#94a3b8', font: { size: 12 } },
+          grid: { color: '#334155' },
+        }
+      }
+    }
+  });
+}
+
+// ─────────────────────────────────────────────
+//  BUILD: META TAG COMPARISON TABLE
+// ─────────────────────────────────────────────
+function titleLenClass(len) {
+  if (len >= 50 && len <= 60) return 'len-good';
+  if (len >= 40 && len <= 70) return 'len-ok';
+  return 'len-bad';
+}
+function descLenClass(len) {
+  if (len >= 150 && len <= 160) return 'len-good';
+  if (len >= 120 && len <= 170) return 'len-ok';
+  return 'len-bad';
+}
+
+function buildMetaTags() {
+  const tbody = document.getElementById('metaTagsBody');
+  let html = '';
+  seoData.forEach(d => {
+    const color = COLORS[d.name];
+    const tClass = titleLenClass(d.titleLength);
+    const dClass = descLenClass(d.descriptionLength);
+    // Truncate long values for display
+    const titleDisplay = d.title.length > 45 ? d.title.substring(0, 43) + '…' : d.title;
+    const descDisplay  = d.description.length > 55 ? d.description.substring(0, 53) + '…' : d.description;
+
+    html += `<tr>
+      <td style="text-align:left">
+        <div style="display:flex;align-items:center;gap:7px">
+          <span style="width:8px;height:8px;border-radius:50%;background:${color};flex-shrink:0;display:inline-block"></span>
+          <span style="font-weight:600">${d.name}</span>
+        </div>
+      </td>
+      <td style="text-align:left;font-size:11px;color:var(--text-secondary)" title="${d.title}">${titleDisplay}</td>
+      <td style="text-align:center"><span class="${tClass}">${d.titleLength}</span></td>
+      <td style="text-align:left;font-size:11px;color:var(--text-secondary)" title="${d.description}">${descDisplay}</td>
+      <td style="text-align:center"><span class="${dClass}">${d.descriptionLength}</span></td>
+      <td style="text-align:center">${d.hasOG ? '<span class="check">✓</span>' : '<span class="cross">✗</span>'}</td>
+      <td style="text-align:center">${d.hasTwitterCard ? '<span class="check">✓</span>' : '<span class="cross">✗</span>'}</td>
+      <td style="text-align:center">${d.hasSchema ? '<span class="check">✓</span>' : '<span class="cross">✗</span>'}</td>
+    </tr>`;
+  });
+  tbody.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
+//  BUILD: KEYWORD FREQUENCY HEATMAP
+// ─────────────────────────────────────────────
+function kwHeatClass(val) {
+  if (val === 0) return 'kw-heat-0';
+  if (val <= 5)  return 'kw-heat-1';
+  if (val <= 15) return 'kw-heat-2';
+  return 'kw-heat-3';
+}
+
+function buildKwHeatmap() {
+  const table = document.getElementById('kwHeatmapTable');
+  const names = competitors.map(c => c.name);
+
+  let html = '<thead><tr><th>Keyword</th>';
+  names.forEach(n => {
+    html += `<th><span class="col-dot" style="background:${COLORS[n]}"></span><br>${n}</th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  kwHeatmapRows.forEach(row => {
+    html += `<tr><td>${row.label}</td>`;
+    names.forEach(n => {
+      const val = kwFreqMatrix[row.key][n] || 0;
+      const cls = kwHeatClass(val);
+      html += `<td class="${cls}" title="${n}: ${val} occurrences">${val}</td>`;
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody>';
+  table.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
+//  BUILD: SEO SCORE CARDS
+// ─────────────────────────────────────────────
+function seoScoreIcon(pass, warn) {
+  if (pass)      return '<span class="sco-g">✓</span>';
+  if (warn)      return '<span class="sco-y">~</span>';
+  return '<span class="sco-r">✗</span>';
+}
+
+function buildSeoScoreCards() {
+  const grid = document.getElementById('seoScoreCards');
+  let html = '';
+  seoData.forEach(d => {
+    const color = COLORS[d.name];
+    const titleGood = d.titleLength >= 50 && d.titleLength <= 60;
+    const titleOk   = d.titleLength >= 40 && d.titleLength <= 70;
+    const descGood  = d.descriptionLength >= 150 && d.descriptionLength <= 160;
+    const descOk    = d.descriptionLength >= 120 && d.descriptionLength <= 170;
+    const h1Good    = d.h1Count === 1;
+
+    html += `<div class="seo-score-card" style="--card-color:${color}">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="width:28px;height:28px;border-radius:7px;background:${color};display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0">${d.name[0]}</span>
+        <span style="font-weight:700;font-size:13px">${d.name}</span>
+      </div>
+      <div class="seo-score-row"><span>Title length (${d.titleLength})</span>${seoScoreIcon(titleGood, titleOk)}</div>
+      <div class="seo-score-row"><span>Desc length (${d.descriptionLength})</span>${seoScoreIcon(descGood, descOk)}</div>
+      <div class="seo-score-row"><span>H1 count (${d.h1Count})</span>${seoScoreIcon(h1Good, false)}</div>
+      <div class="seo-score-row"><span>Schema.org</span>${seoScoreIcon(d.hasSchema, false)}</div>
+      <div class="seo-score-row"><span>hreflang</span>${seoScoreIcon(d.hasHreflang, false)}</div>
+      <div class="seo-score-row"><span>Internal links</span><span style="font-weight:600;color:var(--text-secondary)">${d.internalLinks}</span></div>
+    </div>`;
+  });
+  grid.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
+//  BUILD: KEYWORD OPPORTUNITY CHART
+// ─────────────────────────────────────────────
+function buildKwOpportunityChart() {
+  const ctx = document.getElementById('kwOpportunityChart').getContext('2d');
+
+  const sorted = [...kwOpportunities].sort((a, b) => a.competitorCount - b.competitorCount);
+  const labels = sorted.map(d => d.keyword);
+  const counts = sorted.map(d => d.competitorCount);
+  const usedByLabels = sorted.map(d => d.usedBy.join(', '));
+
+  const barColors = sorted.map(d =>
+    d.competitorCount === 1 ? '#10b981cc' : '#3b82f6cc'
+  );
+  const borderColors = sorted.map(d =>
+    d.competitorCount === 1 ? '#10b981' : '#3b82f6'
+  );
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Competitors Using Keyword',
+        data: counts,
+        backgroundColor: barColors,
+        borderColor: borderColors,
+        borderWidth: 1,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const idx = ctx.dataIndex;
+              const c = sorted[idx];
+              return [
+                `${c.competitorCount} competitor${c.competitorCount !== 1 ? 's' : ''} using this`,
+                `Used by: ${usedByLabels[idx]}`,
+              ];
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: '#94a3b8', font: { size: 11 }, stepSize: 1 },
+          grid: { color: '#1e293b' },
+          min: 0,
+          max: 3,
+          title: {
+            display: true,
+            text: 'Number of competitors targeting this keyword',
+            color: '#64748b',
+            font: { size: 11 },
+          }
+        },
+        y: {
+          ticks: { color: '#94a3b8', font: { size: 12 } },
+          grid: { color: '#334155' },
+        }
+      }
+    }
+  });
+}
+
+// ─────────────────────────────────────────────
+//  INIT
+// ─────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  buildCards('all');
+  buildMatrix();
+  buildPricingChart('bar');
+  buildPlatformChart('bar');
+  buildScatterChart();
+  buildHeatmap();
+  // New sections
+  buildHeroHeadlines();
+  buildCtaCards();
+  buildTrustSignalsChart();
+  buildMetaTags();
+  buildKwHeatmap();
+  buildSeoScoreCards();
+  buildKwOpportunityChart();
+});
+</script>
+
+<div class="toast" id="toast2" style="display:none"></div>
+</body>
+</html>

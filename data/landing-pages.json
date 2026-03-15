@@ -1,0 +1,432 @@
+{
+  "scanDate": "2026-03-15",
+  "results": [
+    {
+      "name": "Skylum",
+      "url": "https://skylum.com/",
+      "status": "success",
+      "error": null,
+      "ctas": [],
+      "promotions": [
+        {
+          "text": "It’s probably less useful to more technically minded photographers, and Skylum’s constantly changing deals and offers can be confusing",
+          "type": "discount",
+          "urgency": false
+        }
+      ],
+      "hooks": {
+        "heroHeadline": "Edit photos effortlessly with AI-powered software",
+        "heroSubheadline": "Choose a cross-device editing Ecosystem, or stay with the full desktop power",
+        "socialProof": [
+          "8 out of 5 Trustpilot Luminar Neo is easy-to-use photo editing software that empowers photography lovers"
+        ],
+        "authoritySignals": [],
+        "urgencyTriggers": []
+      },
+      "trustSignals": [
+        "8 out of 5 Trustpilot Luminar Neo is easy-to-use photo editing software that empowers photography lovers",
+        "Subscribe Your personal data will be processed in accordance with our Privacy Policy Thank you for subscribing"
+      ],
+      "pricingVisibility": "linked (not on page)"
+    },
+    {
+      "name": "Dzine",
+      "url": "https://www.dzine.ai/",
+      "status": "success",
+      "error": null,
+      "ctas": [
+        {
+          "text": "upgrade plans",
+          "href": "https://www.dzine.ai/pricing/",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Start for Free",
+          "href": null,
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Start for FREE today",
+          "href": null,
+          "position": "hero",
+          "type": "primary"
+        }
+      ],
+      "promotions": [
+        {
+          "text": "Dzine offers a 7-day free trial plan",
+          "type": "free_trial",
+          "urgency": false
+        }
+      ],
+      "hooks": {
+        "heroHeadline": "All-in-One Image & Video Studio",
+        "heroSubheadline": "From Ideas to Professional Visual Projects",
+        "socialProof": [
+          "Loved by creators"
+        ],
+        "authoritySignals": [
+          "Make Talking Video with AI Create Winning Ads in Seconds Transform your products into engaging video ads in just minutes"
+        ],
+        "urgencyTriggers": []
+      },
+      "trustSignals": [],
+      "pricingVisibility": "linked (not on page)"
+    },
+    {
+      "name": "Lift",
+      "url": "https://liftapp.ai/",
+      "status": "success",
+      "error": null,
+      "ctas": [],
+      "promotions": [],
+      "hooks": {
+        "heroHeadline": "Edita, mejora y crea imágenes deslumbrantes con IA – al instante",
+        "heroSubheadline": "Confiado por millones en todo el mundo",
+        "socialProof": [],
+        "authoritySignals": [],
+        "urgencyTriggers": []
+      },
+      "trustSignals": [],
+      "pricingVisibility": "linked (not on page)"
+    },
+    {
+      "name": "Renew",
+      "url": "https://renew-photo.com/",
+      "status": "success",
+      "error": null,
+      "ctas": [
+        {
+          "text": "Download on the App Store",
+          "href": null,
+          "position": "hero",
+          "type": "primary"
+        }
+      ],
+      "promotions": [
+        {
+          "text": "\" Kinderteachkm \"After trying the free trial, I was convinced",
+          "type": "free_trial",
+          "urgency": false
+        }
+      ],
+      "hooks": {
+        "heroHeadline": "Restore Old Damaged Photos with the Renew APP",
+        "heroSubheadline": "Bring Your Memories Back to Life with AI",
+        "socialProof": [],
+        "authoritySignals": [],
+        "urgencyTriggers": []
+      },
+      "trustSignals": [
+        "1M+ Photos Restored <60s Processing Time 100% Privacy Protected 4",
+        "Terms of Use Privacy Policy"
+      ],
+      "pricingVisibility": "mentioned but not shown"
+    },
+    {
+      "name": "Photomyne",
+      "url": "https://photomyne.com/",
+      "status": "success",
+      "error": null,
+      "ctas": [
+        {
+          "text": "Try for free",
+          "href": "/join",
+          "position": "header",
+          "type": "primary"
+        },
+        {
+          "text": "Photo Scan by Photomyne Download",
+          "href": null,
+          "position": "footer",
+          "type": "secondary"
+        },
+        {
+          "text": "SlideScan by Photomyne Download",
+          "href": null,
+          "position": "footer",
+          "type": "secondary"
+        },
+        {
+          "text": "FilmBox by Photomyne Download",
+          "href": null,
+          "position": "footer",
+          "type": "secondary"
+        },
+        {
+          "text": "Colorize by Photomyne Download",
+          "href": null,
+          "position": "footer",
+          "type": "secondary"
+        },
+        {
+          "text": "Photo Family Tree by Photomyne Download",
+          "href": null,
+          "position": "header",
+          "type": "secondary"
+        },
+        {
+          "text": "FridgeArt by Photomyne Download",
+          "href": null,
+          "position": "header",
+          "type": "secondary"
+        },
+        {
+          "text": "Try for free",
+          "href": null,
+          "position": "header",
+          "type": "secondary"
+        },
+        {
+          "text": "Claim free trial",
+          "href": null,
+          "position": "header",
+          "type": "secondary"
+        },
+        {
+          "text": "Start your free trial",
+          "href": null,
+          "position": "body",
+          "type": "secondary"
+        }
+      ],
+      "promotions": [
+        {
+          "text": "To continue, please log in Enjoy a 3-day free trial when choosing the yearly plan",
+          "type": "free_trial",
+          "urgency": false
+        },
+        {
+          "text": "Claim free trial Make your past a present The perfect home for scanning old memories and preserving them for your family’s future",
+          "type": "free_trial",
+          "urgency": false
+        },
+        {
+          "text": "Cancel anytime",
+          "type": "free_trial",
+          "urgency": false
+        }
+      ],
+      "hooks": {
+        "heroHeadline": "Make your past a present",
+        "heroSubheadline": "The perfect home for scanning old memories and preserving them for your family’s future.",
+        "socialProof": [],
+        "authoritySignals": [
+          "Every captured memory Dedicated scanning apps for multiple types of media: photos, slides, negatives, and kids’ art",
+          "I understand and agree We urge you to read Photomyne’s complete GDPR information page before continuing"
+        ],
+        "urgencyTriggers": []
+      },
+      "trustSignals": [
+        "By clicking \"Continue\" you acknowledge that you have read and agreed to our Terms of Use and Privacy Policy",
+        "I understand and agree We urge you to read Photomyne’s complete GDPR information page before continuing"
+      ],
+      "pricingVisibility": "visible on page"
+    },
+    {
+      "name": "Photoroom",
+      "url": "https://www.photoroom.com/",
+      "status": "success",
+      "error": null,
+      "ctas": [
+        {
+          "text": "Download iOS App",
+          "href": "https://apps.apple.com/app/photoroom-ai-photo-editor/id1455009060?pt=120355336&amp;ct=prbr&amp;mt=8",
+          "position": "body",
+          "type": "primary"
+        },
+        {
+          "text": "Download Android App",
+          "href": "https://play.google.com/store/apps/details?id=com.photoroom.app",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Start free Pro trial",
+          "href": "https://app.photoroom.com/create?modal=upsell-select-plan",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Start a free trial",
+          "href": "https://app.photoroom.com/create?modal=upsell-select-plan",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Learn more",
+          "href": "https://help.photoroom.com/en/articles/12743622-upgrade-to-ultra",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Learn more",
+          "href": "/enterprise",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Start free trial",
+          "href": "https://app.photoroom.com",
+          "position": "body",
+          "type": "secondary"
+        }
+      ],
+      "promotions": [
+        {
+          "text": "Start a free trial Ultra Ultra Best for high-volume businesses who need to process hundreds or thousands of images efficiently while maintaining quality and consistency",
+          "type": "free_trial",
+          "urgency": false
+        }
+      ],
+      "hooks": {
+        "heroHeadline": "Create pro visuals that sell",
+        "heroSubheadline": "Transform ordinary product shots into scroll-stopping visuals that drive clicks, trust, and conversions.",
+        "socialProof": [
+          "Start creating for free Loved by companies of all sizes From small businesses to global brands, Photoroom powers the visuals that sell"
+        ],
+        "authoritySignals": [],
+        "urgencyTriggers": []
+      },
+      "trustSignals": [],
+      "pricingVisibility": "linked (not on page)"
+    },
+    {
+      "name": "Remini",
+      "url": "https://remini.ai/",
+      "status": "success",
+      "error": null,
+      "ctas": [],
+      "promotions": [],
+      "hooks": {
+        "heroHeadline": "The only photo and video enhancer you&#x27;ll ever need",
+        "heroSubheadline": "Generate photos of yourself, with AI",
+        "socialProof": [
+          "Our users Used by millions People across the planet love using Remini to transform their visual content"
+        ],
+        "authoritySignals": [
+          "Social platform Turn your social media content into professional-grade images that engage your audience"
+        ],
+        "urgencyTriggers": []
+      },
+      "trustSignals": [],
+      "pricingVisibility": "visible on page"
+    },
+    {
+      "name": "Picsart",
+      "url": "https://picsart.com/",
+      "status": "success",
+      "error": null,
+      "ctas": [
+        {
+          "text": "Get started",
+          "href": "https://picsart.com/create/editor?category=miniapps&amp;app=t2i",
+          "position": "hero",
+          "type": "primary"
+        },
+        {
+          "text": "Get started",
+          "href": "https://picsart.com/gen-ai",
+          "position": "hero",
+          "type": "secondary"
+        },
+        {
+          "text": "Get started",
+          "href": "https://picsart.com/create/editor?category=miniapps&amp;app=com.picsart.edit.image-to-video",
+          "position": "hero",
+          "type": "secondary"
+        },
+        {
+          "text": "Get started",
+          "href": "https://picsart.com/create/editor?category=miniapps&amp;app=com.picsart.edit.ai-image-editor",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Get started",
+          "href": "https://picsart.com/create/editor?category=background",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Get started",
+          "href": "https://picsart.com/create/editor?experience=edit&amp;category=miniapps&amp;app=com.picsart.edit.ai-video-editor",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Get started",
+          "href": "https://picsart.com/create/editor?experience=edit&amp;category=miniapps&amp;app=com.picsart.edit.makeup",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Get started",
+          "href": "https://picsart.com/create/workflows",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Get started",
+          "href": "https://picsart.com/create/editor?experience=edit&amp;category=miniapps&amp;app=com.picsart.edit.ai-try-on",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Learn more",
+          "href": "https://picsart.com/ai-playground/",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Learn more",
+          "href": "https://picsart.com/persona/",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Learn more",
+          "href": "https://picsart.com/comic-book-generator/",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Learn more",
+          "href": "https://picsart.com/ai-story-generator/",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Learn more",
+          "href": "https://picsart.com/aura/",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Download mobile app",
+          "href": "https://picsart.com/apps/",
+          "position": "body",
+          "type": "secondary"
+        },
+        {
+          "text": "Get started for free",
+          "href": "https://picsart.com/create/editor",
+          "position": "body",
+          "type": "secondary"
+        }
+      ],
+      "promotions": [],
+      "hooks": {
+        "heroHeadline": "Built for creators, marketers, and teams with big aspirations",
+        "heroSubheadline": "Make content that gets your vibe.",
+        "socialProof": [],
+        "authoritySignals": [],
+        "urgencyTriggers": []
+      },
+      "trustSignals": [],
+      "pricingVisibility": "visible on page"
+    }
+  ]
+}

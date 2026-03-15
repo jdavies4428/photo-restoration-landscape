@@ -1,0 +1,38 @@
+{
+  "skillName": "Photo Restoration Landscape",
+  "slug": "photo-restoration-landscape",
+  "sourceUrl": "https://skylum.com/",
+  "sourceUrls": [
+    "https://skylum.com/",
+    "https://www.dzine.ai/",
+    "https://liftapp.ai/",
+    "https://renew-photo.com/",
+    "https://photomyne.com/",
+    "https://www.photoroom.com/",
+    "https://remini.ai/",
+    "https://picsart.com/"
+  ],
+  "sourceType": "product-page",
+  "detectionStrategy": "smart-diff",
+  "createdAt": "2026-03-14T00:00:00Z",
+  "lastChecked": "2026-03-14T00:00:00Z",
+  "lastChanged": null,
+  "contentHashes": {
+    "https://skylum.com/": null,
+    "https://www.dzine.ai/": null,
+    "https://liftapp.ai/": null,
+    "https://renew-photo.com/": null,
+    "https://photomyne.com/": null,
+    "https://www.photoroom.com/": null,
+    "https://remini.ai/": null,
+    "https://picsart.com/": null
+  },
+  "checkInterval": "weekly",
+  "outputs": [
+    "SKILL.md",
+    "dashboard.html",
+    "data/competitors.json",
+    "scripts/scan-landing-pages.js",
+    "scripts/scan-seo.js"
+  ]
+}

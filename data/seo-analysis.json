@@ -1,0 +1,1487 @@
+{
+  "scanDate": "2026-03-14",
+  "competitorCount": 8,
+  "successCount": 8,
+  "errorCount": 0,
+  "competitors": [
+    {
+      "name": "Skylum",
+      "url": "https://skylum.com/",
+      "meta": {
+        "title": "Skylum: Your Gateway to Creative Imaging",
+        "titleLength": 40,
+        "description": "Discover the next level of photo editing with Skylum's innovative software solutions. Whether you're a seasoned professional or an amateur enthusiast, our powerful tools empower you to enhance your photography.",
+        "descriptionLength": 210,
+        "keywords": null,
+        "ogTitle": "Skylum – Great Photography Differently",
+        "ogDescription": "Complex photo editing made simple & fast for all Mac and PC users. Skylum photo apps have been honored by Apple as the ″Best of the Year″ for 5 straight years.",
+        "ogImage": "https://media.macphun.com/img/uploads/uploads/skylum/l/skylum-com-share-new-min.jpg?q=75",
+        "twitterCard": null,
+        "twitterTitle": null,
+        "twitterDescription": null,
+        "canonical": "https://skylum.com",
+        "robots": null
+      },
+      "headings": {
+        "h1": [
+          "Edit photos effortlessly with AI-powered software"
+        ],
+        "h1Count": 1,
+        "h2": [
+          "Great news!",
+          "Choose a cross-device editing Ecosystem, or stay with the full desktop power",
+          "Innovative photo editing for your Apple devices",
+          "Pro-level desktop app with specialized portrait tools"
+        ],
+        "h2Count": 4,
+        "h3": [
+          "Best Cross-device App That Works Seamlessly",
+          "Skylum Partners with Google to Expand Luminar Photo Editing to Android and ChromeOS",
+          "Celebrating One Year of Luminar Mobile!"
+        ],
+        "h3Count": 3
+      },
+      "keywordFrequency": {
+        "photo restoration": 1,
+        "restore photos": 0,
+        "old photos": 0,
+        "photo enhancement": 0,
+        "enhance": 5,
+        "upscale": 2,
+        "HD": 2,
+        "AI": 77,
+        "artificial intelligence": 1,
+        "machine learning": 0,
+        "scan": 1,
+        "scanning": 0,
+        "digitize": 0,
+        "colorize": 0,
+        "colorization": 0,
+        "black and white": 0,
+        "background removal": 3,
+        "remove background": 0,
+        "photo editing": 10,
+        "editor": 13,
+        "edit photos": 2,
+        "free": 2,
+        "trial": 1,
+        "premium": 0,
+        "pro": 23,
+        "download": 3,
+        "app": 15,
+        "face": 4,
+        "portrait": 8,
+        "selfie": 0,
+        "video": 0,
+        "animation": 0,
+        "e-commerce": 1,
+        "product photo": 0,
+        "family": 1,
+        "memories": 0,
+        "heritage": 0
+      },
+      "technicalSeo": {
+        "hasSchema": true,
+        "schemaTypes": [
+          "Organization"
+        ],
+        "schemaObjects": [
+          {
+            "@type": "Organization",
+            "name": "Skylum",
+            "description": "Skylum is a software company that creates award-winning photo editing tools",
+            "url": "https://skylum.com",
+            "@id": "https://skylum.com/#organization"
+          }
+        ],
+        "hasHreflang": true,
+        "hreflangLocales": [
+          "x-default",
+          "de",
+          "ja",
+          "fr",
+          "es",
+          "it",
+          "nl",
+          "cs",
+          "ko",
+          "pl",
+          "uk",
+          "zh-Hans",
+          "zh-Hant"
+        ],
+        "hasMobileViewport": true,
+        "hasLazyLoading": true,
+        "hasImageOptimization": true,
+        "internalLinks": 254,
+        "externalLinks": 24
+      }
+    },
+    {
+      "name": "Dzine",
+      "url": "https://www.dzine.ai/",
+      "meta": {
+        "title": "Dzine - The Most Controllable AI Image & Design Tool",
+        "titleLength": 52,
+        "description": "Transform design with Dzine: the most controllable AI design tool. Enjoy image generation and editing on our all-in-one online free platform.",
+        "descriptionLength": 141,
+        "keywords": "Dzine ai, Dzine, Dzine ai, ai image generator, ai generate image, create ai image, ai create image, generate ai image, ai graphic design generator, image composition, image create ai, ai image design, artisitc style, aigc, graphic design ai generator, image generation, canva, canva ai generator, stylar com, design partner, design assistant, ai image generation, graphic design, free ai generative fill, generative fill ai free, image inpainting, ai image inpainting, inpainting ai, stable diffusion inpainting, sdxl inpainting, image cleaner, object removal, remove object, object insertion, insert object, generative fill alternative",
+        "ogTitle": null,
+        "ogDescription": null,
+        "ogImage": null,
+        "twitterCard": null,
+        "twitterTitle": null,
+        "twitterDescription": null,
+        "canonical": "https://www.dzine.ai/",
+        "robots": null
+      },
+      "headings": {
+        "h1": [
+          "All-in-One Image & Video Studio"
+        ],
+        "h1Count": 1,
+        "h2": [
+          "From Ideas to Professional Visual Projects",
+          "See What Our Users Are Saying",
+          "Frequently Asked Questions",
+          "Create Your First Project in Dzine"
+        ],
+        "h2Count": 4,
+        "h3": [
+          "AI-Powered Story Video Maker",
+          "Online AI Avatar Generator",
+          "Create Winning Ads in Seconds",
+          "Controllable AI Graphic Design"
+        ],
+        "h3Count": 4
+      },
+      "keywordFrequency": {
+        "photo restoration": 0,
+        "restore photos": 0,
+        "old photos": 0,
+        "photo enhancement": 0,
+        "enhance": 8,
+        "upscale": 0,
+        "HD": 2,
+        "AI": 446,
+        "artificial intelligence": 0,
+        "machine learning": 0,
+        "scan": 0,
+        "scanning": 0,
+        "digitize": 0,
+        "colorize": 0,
+        "colorization": 0,
+        "black and white": 0,
+        "background removal": 0,
+        "remove background": 0,
+        "photo editing": 0,
+        "editor": 12,
+        "edit photos": 0,
+        "free": 47,
+        "trial": 1,
+        "premium": 1,
+        "pro": 88,
+        "download": 0,
+        "app": 87,
+        "face": 12,
+        "portrait": 0,
+        "selfie": 0,
+        "video": 80,
+        "animation": 32,
+        "e-commerce": 0,
+        "product photo": 0,
+        "family": 30,
+        "memories": 0,
+        "heritage": 0
+      },
+      "technicalSeo": {
+        "hasSchema": true,
+        "schemaTypes": [
+          "WebSite",
+          "SearchAction",
+          "EntryPoint"
+        ],
+        "schemaObjects": [
+          {
+            "@type": "WebSite",
+            "name": "AI Image Editor - Create and edit images & designs | Dzine AI",
+            "url": "https://www.dzine.ai"
+          }
+        ],
+        "hasHreflang": false,
+        "hreflangLocales": [],
+        "hasMobileViewport": true,
+        "hasLazyLoading": true,
+        "hasImageOptimization": false,
+        "internalLinks": 151,
+        "externalLinks": 14
+      }
+    },
+    {
+      "name": "Lift",
+      "url": "https://liftapp.ai/",
+      "meta": {
+        "title": "Aumenta Tu Creatividad con Lift — Herramientas de IA para Creación de Contenido",
+        "titleLength": 79,
+        "description": "Lift te ayuda a crear contenido de alta calidad con IA. Usa nuestro editor web o aplicaciones móviles para editar imágenes, videos y más — todo en un solo lugar. ¡Pruébalo gratis!",
+        "descriptionLength": 179,
+        "keywords": null,
+        "ogTitle": "Crea Imágenes Deslumbrantes al Instante con IA – App Lift",
+        "ogDescription": "Únete a millones usando Lift para mejorar, editar y generar visuales con IA. Explora herramientas como filtros de IA, borradores y ampliadores. Disponible en dispositivos móviles y web.",
+        "ogImage": "/_next/static/media/seo-image.369fae72.webp",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": null,
+        "twitterDescription": null,
+        "canonical": "https://liftapp.ai/es",
+        "robots": "index,follow"
+      },
+      "headings": {
+        "h1": [
+          "Edita, mejora y crea imágenes deslumbrantes con IA – al instante"
+        ],
+        "h1Count": 1,
+        "h2": [
+          "Confiado por millones en todo el mundo",
+          "Todo lo que necesitas para crear mejores imágenes",
+          "Preguntas frecuentes",
+          "Tus herramientas todo en uno para crear, editar y mejorar tu contenido",
+          "Soluciones",
+          "Apps",
+          "Empresa",
+          "Ayuda y Legal"
+        ],
+        "h2Count": 8,
+        "h3": [
+          "¿Qué es Lift AI?",
+          "¿Cómo funciona Lift para generar y editar imágenes?",
+          "¿Puede mejorar la calidad y corregir defectos en la imagen?",
+          "¿Puedo descargar los resultados sin marca de agua?",
+          "¿Puedo usar Lift AI Image Enhancer gratis?",
+          "Idioma",
+          "Idioma",
+          "Síguenos",
+          "Descarga la app"
+        ],
+        "h3Count": 9
+      },
+      "keywordFrequency": {
+        "photo restoration": 0,
+        "restore photos": 0,
+        "old photos": 3,
+        "photo enhancement": 0,
+        "enhance": 30,
+        "upscale": 18,
+        "HD": 7,
+        "AI": 543,
+        "artificial intelligence": 0,
+        "machine learning": 0,
+        "scan": 0,
+        "scanning": 0,
+        "digitize": 0,
+        "colorize": 10,
+        "colorization": 0,
+        "black and white": 2,
+        "background removal": 2,
+        "remove background": 1,
+        "photo editing": 1,
+        "editor": 28,
+        "edit photos": 2,
+        "free": 4,
+        "trial": 12,
+        "premium": 0,
+        "pro": 76,
+        "download": 5,
+        "app": 75,
+        "face": 15,
+        "portrait": 11,
+        "selfie": 2,
+        "video": 3,
+        "animation": 0,
+        "e-commerce": 1,
+        "product photo": 0,
+        "family": 0,
+        "memories": 2,
+        "heritage": 0
+      },
+      "technicalSeo": {
+        "hasSchema": true,
+        "schemaTypes": [
+          "WebPage",
+          "Product",
+          "Brand",
+          "AggregateRating",
+          "InteractionCounter",
+          "InstallAction",
+          "ItemList",
+          "ListItem",
+          "FAQPage",
+          "Question",
+          "Answer",
+          "SoftwareApplication",
+          "Organization",
+          "ViewAction",
+          "BreadcrumbList"
+        ],
+        "schemaObjects": [
+          {}
+        ],
+        "hasHreflang": true,
+        "hreflangLocales": [
+          "en",
+          "es",
+          "pt",
+          "de",
+          "it",
+          "fr",
+          "pl",
+          "tr",
+          "id",
+          "hi",
+          "vi",
+          "th",
+          "nl",
+          "x-default"
+        ],
+        "hasMobileViewport": true,
+        "hasLazyLoading": true,
+        "hasImageOptimization": true,
+        "internalLinks": 179,
+        "externalLinks": 24
+      }
+    },
+    {
+      "name": "Renew",
+      "url": "https://renew-photo.com/",
+      "meta": {
+        "title": "The Best Photo Recovery App to Restore Old Damaged Photos - Renew APP",
+        "titleLength": 69,
+        "description": "Looking to restore old damaged photos? Renew APP is the best photo recovery app that brings your faded memories back to life with powerful picture restoration technology.",
+        "descriptionLength": 170,
+        "keywords": "photo restoration app, restore old photos with AI, enhance old photos, fix old pictures, app to restore old photos, AI photo restoration, old photo repair, make old pictures look new, best photo restoration app, how to restore old photos",
+        "ogTitle": "The Best Photo Recovery App to Restore Old Damaged Photos - Renew APP",
+        "ogDescription": "Looking to restore old damaged photos? Renew APP is the best photo recovery app that brings your faded memories back to life with powerful picture restoration technology.",
+        "ogImage": "https://renew-photo.com/images/59c55345-abf4-4b14-ba5f-8109554f94d7.webp",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "The Best Photo Recovery App to Restore Old Damaged Photos - Renew APP",
+        "twitterDescription": "Looking to restore old damaged photos? Renew APP is the best photo recovery app that brings your faded memories back to life with powerful picture restoration technology.",
+        "canonical": "https://renew-photo.com/",
+        "robots": null
+      },
+      "headings": {
+        "h1": [
+          "Restore Old Damaged Photos with the Renew APP"
+        ],
+        "h1Count": 1,
+        "h2": [
+          "Bring Your Memories Back to Life with AI",
+          "Why Choose Renew APP?",
+          "Key Features",
+          "How It Works",
+          "See the Transformation",
+          "Loved by Families Worldwide",
+          "Start Restoring Your Photos Today"
+        ],
+        "h2Count": 7,
+        "h3": [
+          "Smart AI Algorithms",
+          "User-Friendly Interface",
+          "AI Photo Restoration",
+          "HD Enhancement",
+          "Photo Colorization",
+          "Scratch Removal",
+          "Lighting Fix",
+          "Photo Combining",
+          "Photo Animation",
+          "HD Print Quality"
+        ],
+        "h3Count": 15
+      },
+      "keywordFrequency": {
+        "photo restoration": 18,
+        "restore photos": 0,
+        "old photos": 15,
+        "photo enhancement": 2,
+        "enhance": 10,
+        "upscale": 0,
+        "HD": 6,
+        "AI": 57,
+        "artificial intelligence": 0,
+        "machine learning": 0,
+        "scan": 0,
+        "scanning": 0,
+        "digitize": 0,
+        "colorize": 3,
+        "colorization": 5,
+        "black and white": 2,
+        "background removal": 0,
+        "remove background": 0,
+        "photo editing": 2,
+        "editor": 1,
+        "edit photos": 0,
+        "free": 5,
+        "trial": 4,
+        "premium": 1,
+        "pro": 18,
+        "download": 6,
+        "app": 63,
+        "face": 6,
+        "portrait": 2,
+        "selfie": 0,
+        "video": 2,
+        "animation": 4,
+        "e-commerce": 0,
+        "product photo": 0,
+        "family": 6,
+        "memories": 5,
+        "heritage": 0
+      },
+      "technicalSeo": {
+        "hasSchema": true,
+        "schemaTypes": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebSite",
+          "SearchAction",
+          "SoftwareApplication",
+          "Offer",
+          "AggregateRating",
+          "VideoObject",
+          "Review",
+          "Person",
+          "Rating",
+          "WebPage"
+        ],
+        "schemaObjects": [
+          {}
+        ],
+        "hasHreflang": true,
+        "hreflangLocales": [
+          "en",
+          "fr",
+          "de",
+          "es",
+          "uk",
+          "pt",
+          "ja",
+          "x-default"
+        ],
+        "hasMobileViewport": true,
+        "hasLazyLoading": true,
+        "hasImageOptimization": true,
+        "internalLinks": 21,
+        "externalLinks": 4
+      }
+    },
+    {
+      "name": "Photomyne",
+      "url": "https://photomyne.com/",
+      "meta": {
+        "title": "Photomyne: Save & Cherish Family Memories Forever",
+        "titleLength": 49,
+        "description": "Scan, enhance, and celebrate your family",
+        "descriptionLength": 40,
+        "keywords": null,
+        "ogTitle": null,
+        "ogDescription": null,
+        "ogImage": "https://d3ebpjo8i5k1d2.cloudfront.net/images/share_image.jpg",
+        "twitterCard": null,
+        "twitterTitle": null,
+        "twitterDescription": null,
+        "canonical": null,
+        "robots": null
+      },
+      "headings": {
+        "h1": [
+          "Make your past a present"
+        ],
+        "h1Count": 1,
+        "h2": [
+          "The perfect home for scanning old memories and preserving them for your family’s future.",
+          "The perfect home for scanning old memories and preserving them for your family’s future."
+        ],
+        "h2Count": 2,
+        "h3": [],
+        "h3Count": 0
+      },
+      "keywordFrequency": {
+        "photo restoration": 0,
+        "restore photos": 0,
+        "old photos": 2,
+        "photo enhancement": 0,
+        "enhance": 5,
+        "upscale": 0,
+        "HD": 0,
+        "AI": 72,
+        "artificial intelligence": 0,
+        "machine learning": 0,
+        "scan": 72,
+        "scanning": 39,
+        "digitize": 1,
+        "colorize": 23,
+        "colorization": 4,
+        "black and white": 1,
+        "background removal": 0,
+        "remove background": 0,
+        "photo editing": 0,
+        "editor": 0,
+        "edit photos": 0,
+        "free": 92,
+        "trial": 53,
+        "premium": 1,
+        "pro": 36,
+        "download": 23,
+        "app": 79,
+        "face": 4,
+        "portrait": 0,
+        "selfie": 0,
+        "video": 33,
+        "animation": 5,
+        "e-commerce": 0,
+        "product photo": 0,
+        "family": 13,
+        "memories": 7,
+        "heritage": 0
+      },
+      "technicalSeo": {
+        "hasSchema": false,
+        "schemaTypes": [],
+        "schemaObjects": [],
+        "hasHreflang": false,
+        "hreflangLocales": [],
+        "hasMobileViewport": true,
+        "hasLazyLoading": true,
+        "hasImageOptimization": false,
+        "internalLinks": 98,
+        "externalLinks": 26
+      }
+    },
+    {
+      "name": "Photoroom",
+      "url": "https://www.photoroom.com/",
+      "meta": {
+        "title": "AI-Powered Photo Editor and Listing Studio for Product Photography | Photoroom",
+        "titleLength": 78,
+        "description": "AI-powered photo editing tool and listing studio for quick, professional-quality visuals tailored to e-commerce businesses and social media creators. It helps automate image creation, format for multiple marketplaces, and produce marketplace-ready listings at scale.",
+        "descriptionLength": 266,
+        "keywords": null,
+        "ogTitle": "Remove Background and Create Product Pictures | Photoroom",
+        "ogDescription": "Create product and portrait pictures using only your phone. Remove background, change background and showcase products.",
+        "ogImage": "https://a.storyblok.com/f/191576/2768x1244/70240ce23c/screenshot-2024-04-03-at-14-09-16.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": null,
+        "twitterDescription": null,
+        "canonical": "https://www.photoroom.com/",
+        "robots": "index,follow"
+      },
+      "headings": {
+        "h1": [
+          "Create pro visuals that sell"
+        ],
+        "h1Count": 1,
+        "h2": [
+          "Transform ordinary product shots into scroll-stopping visuals that drive clicks, trust, and conversions.",
+          "Your all-in-one AI photo studio",
+          "From photo to profit — visuals that actually convert",
+          "Cut your photo costs by 90%, not your quality",
+          "Grow with Photoroom",
+          "Turn product photos into profit",
+          "Create visuals across all devices",
+          "On-brand visuals at scale made simple",
+          "Loved by companies of all sizes",
+          "Automate your workflow"
+        ],
+        "h2Count": 10,
+        "h3": [
+          "Sell faster with studio‑quality product visuals",
+          "Explore our apps"
+        ],
+        "h3Count": 2
+      },
+      "keywordFrequency": {
+        "photo restoration": 0,
+        "restore photos": 0,
+        "old photos": 0,
+        "photo enhancement": 0,
+        "enhance": 4,
+        "upscale": 0,
+        "HD": 16,
+        "AI": 252,
+        "artificial intelligence": 0,
+        "machine learning": 0,
+        "scan": 0,
+        "scanning": 0,
+        "digitize": 0,
+        "colorize": 0,
+        "colorization": 0,
+        "black and white": 0,
+        "background removal": 3,
+        "remove background": 19,
+        "photo editing": 19,
+        "editor": 92,
+        "edit photos": 3,
+        "free": 74,
+        "trial": 7,
+        "premium": 0,
+        "pro": 363,
+        "download": 46,
+        "app": 217,
+        "face": 25,
+        "portrait": 2,
+        "selfie": 0,
+        "video": 36,
+        "animation": 0,
+        "e-commerce": 14,
+        "product photo": 49,
+        "family": 0,
+        "memories": 0,
+        "heritage": 0
+      },
+      "technicalSeo": {
+        "hasSchema": true,
+        "schemaTypes": [
+          "Organization",
+          "Person",
+          "ContactPoint",
+          "SoftwareApplication",
+          "Offer",
+          "WebSite",
+          "WebPage",
+          "ImageObject"
+        ],
+        "schemaObjects": [
+          {
+            "@type": "Organization",
+            "name": "Photoroom",
+            "url": "https://www.photoroom.com",
+            "@id": "https://www.photoroom.com/#organization"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Photoroom",
+            "description": "AI-powered photo editor for product images, social posts and ads: background removal, AI backgrounds, instant shadows, and batch editing.",
+            "@id": "https://www.photoroom.com/#app"
+          },
+          {
+            "@type": "WebSite",
+            "name": "Photoroom",
+            "url": "https://www.photoroom.com/",
+            "@id": "https://www.photoroom.com/#website"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Photoroom — AI Photo Editor",
+            "url": "https://www.photoroom.com/",
+            "@id": "https://www.photoroom.com/#webpage"
+          }
+        ],
+        "hasHreflang": true,
+        "hreflangLocales": [
+          "en",
+          "uk",
+          "zh",
+          "zh-tw",
+          "nl",
+          "de",
+          "es",
+          "fr",
+          "id",
+          "it",
+          "ja",
+          "ko",
+          "ms",
+          "pt-br",
+          "pt-pt",
+          "ru",
+          "th",
+          "tr",
+          "vi"
+        ],
+        "hasMobileViewport": true,
+        "hasLazyLoading": true,
+        "hasImageOptimization": true,
+        "internalLinks": 152,
+        "externalLinks": 18
+      }
+    },
+    {
+      "name": "Remini",
+      "url": "https://remini.ai/",
+      "meta": {
+        "title": "Remini - AI Photo Enhancer",
+        "titleLength": 26,
+        "description": "Remini uses innovative, state-of-the-art AI technology to transform your old photos into HD masterpieces.",
+        "descriptionLength": 105,
+        "keywords": null,
+        "ogTitle": "Remini - AI Photo Enhancer",
+        "ogDescription": "Remini uses innovative, state-of-the-art AI technology to transform your old photos into HD masterpieces.",
+        "ogImage": "https://images.prismic.io/remini-marketing-website/f37c6090-0886-44ab-91c2-013d76085de4_OG%2BImage.png?auto=compress,format",
+        "twitterCard": null,
+        "twitterTitle": null,
+        "twitterDescription": null,
+        "canonical": null,
+        "robots": null
+      },
+      "headings": {
+        "h1": [
+          "The only photo and video enhancer you'll ever need"
+        ],
+        "h1Count": 1,
+        "h2": [
+          "Generate photos of yourself, with AI",
+          "One product, endless business possibilities",
+          "Bye-bye blur 👋🏻 Hello high definition",
+          "Used by millions",
+          "“Look at the before and after. If this doesn’t blow your mind, I don’t know what will! This is absolute magic!”"
+        ],
+        "h2Count": 5,
+        "h3": [],
+        "h3Count": 0
+      },
+      "keywordFrequency": {
+        "photo restoration": 0,
+        "restore photos": 0,
+        "old photos": 12,
+        "photo enhancement": 2,
+        "enhance": 109,
+        "upscale": 4,
+        "HD": 3,
+        "AI": 82,
+        "artificial intelligence": 0,
+        "machine learning": 0,
+        "scan": 0,
+        "scanning": 0,
+        "digitize": 0,
+        "colorize": 0,
+        "colorization": 0,
+        "black and white": 0,
+        "background removal": 0,
+        "remove background": 0,
+        "photo editing": 4,
+        "editor": 0,
+        "edit photos": 0,
+        "free": 4,
+        "trial": 0,
+        "premium": 0,
+        "pro": 21,
+        "download": 2,
+        "app": 51,
+        "face": 22,
+        "portrait": 3,
+        "selfie": 0,
+        "video": 32,
+        "animation": 0,
+        "e-commerce": 4,
+        "product photo": 0,
+        "family": 2,
+        "memories": 0,
+        "heritage": 2
+      },
+      "technicalSeo": {
+        "hasSchema": false,
+        "schemaTypes": [],
+        "schemaObjects": [],
+        "hasHreflang": false,
+        "hreflangLocales": [],
+        "hasMobileViewport": true,
+        "hasLazyLoading": true,
+        "hasImageOptimization": true,
+        "internalLinks": 41,
+        "externalLinks": 13
+      }
+    },
+    {
+      "name": "Picsart",
+      "url": "https://picsart.com/",
+      "meta": {
+        "title": "Picsart: The AI Creative Platform",
+        "titleLength": 33,
+        "description": "Picsart is an all-in-one creative platform with a wide selection of free AI design tools. Create content fast with expert-crafted templates, built-in asset libraries, and generative AI tools.",
+        "descriptionLength": 191,
+        "keywords": null,
+        "ogTitle": "Picsart: The AI Creative Platform",
+        "ogDescription": "Picsart is an all-in-one creative platform with a wide selection of free AI design tools. Create content fast with expert-crafted templates, built-in asset libraries, and generative AI tools.",
+        "ogImage": "https://cdn-cms-uploads.picsart.com/cms-uploads/3ceeb21d-405b-4062-ab27-216905e74624.webp",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Picsart: The AI Creative Platform",
+        "twitterDescription": "Picsart is an all-in-one creative platform with a wide selection of free AI design tools. Create content fast with expert-crafted templates, built-in asset libraries, and generative AI tools.",
+        "canonical": "https://picsart.com/",
+        "robots": null
+      },
+      "headings": {
+        "h1": [
+          "Built for creators, marketers, and teams with big aspirations"
+        ],
+        "h1Count": 1,
+        "h2": [
+          "Make content that gets your vibe.",
+          "Your AI Playground",
+          "Meet your AI character",
+          "Let AI create your comic book",
+          "Turn ideas into animated stories",
+          "Chat your vision into visuals",
+          "Trending videos in a click",
+          "Create with any model",
+          "Got a big idea? We've got the tools to make it real.",
+          "Create Your Way",
+          "Growing with you, every step of the way",
+          "Growing with you, every step of the way",
+          "All the tools you need",
+          "Create anywhere, anytime",
+          "Join millions of subscribers who grow with Picsart",
+          "What creators are saying",
+          "Find a plan that works for you"
+        ],
+        "h2Count": 17,
+        "h3": [
+          "Post content that actually gets saved",
+          "Picsart Aura",
+          "Picsart Flow",
+          "Creating for fun",
+          "Creating for fun",
+          "AI-powered creation",
+          "Instant results",
+          "Always fresh",
+          "Video & photo",
+          "Real-time collaboration"
+        ],
+        "h3Count": 14
+      },
+      "keywordFrequency": {
+        "photo restoration": 0,
+        "restore photos": 0,
+        "old photos": 0,
+        "photo enhancement": 0,
+        "enhance": 35,
+        "upscale": 12,
+        "HD": 14,
+        "AI": 940,
+        "artificial intelligence": 0,
+        "machine learning": 0,
+        "scan": 5,
+        "scanning": 0,
+        "digitize": 0,
+        "colorize": 0,
+        "colorization": 0,
+        "black and white": 0,
+        "background removal": 4,
+        "remove background": 7,
+        "photo editing": 6,
+        "editor": 141,
+        "edit photos": 0,
+        "free": 196,
+        "trial": 161,
+        "premium": 120,
+        "pro": 409,
+        "download": 38,
+        "app": 245,
+        "face": 68,
+        "portrait": 26,
+        "selfie": 12,
+        "video": 252,
+        "animation": 14,
+        "e-commerce": 13,
+        "product photo": 5,
+        "family": 1,
+        "memories": 0,
+        "heritage": 0
+      },
+      "technicalSeo": {
+        "hasSchema": true,
+        "schemaTypes": [
+          "WebSite",
+          "WebPage",
+          "ImageObject",
+          "Product",
+          "Brand",
+          "Offer",
+          "UnitPriceSpecification",
+          "QuantitativeValue"
+        ],
+        "schemaObjects": [
+          {
+            "@type": "WebSite",
+            "name": "Picsart: The AI Creative Platform",
+            "description": "Picsart is an all-in-one creative platform with a wide selection of free AI design tools. Create content fast with expert-crafted templates, built-in asset libraries, and generative AI tools.",
+            "url": "https://picsart.com"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Picsart: The AI Creative Platform",
+            "description": "Picsart is an all-in-one creative platform with a wide selection of free AI design tools. Create content fast with expert-crafted templates, built-in asset libraries, and generative AI tools.",
+            "url": "https://picsart.com"
+          },
+          {
+            "@type": "Product",
+            "name": "Picsart: The AI Creative Platform",
+            "description": "Picsart is an all-in-one creative platform with a wide selection of free AI design tools. Create content fast with expert-crafted templates, built-in asset libraries, and generative AI tools.",
+            "url": "https://picsart.com"
+          }
+        ],
+        "hasHreflang": false,
+        "hreflangLocales": [],
+        "hasMobileViewport": true,
+        "hasLazyLoading": true,
+        "hasImageOptimization": true,
+        "internalLinks": 165,
+        "externalLinks": 11
+      }
+    }
+  ],
+  "keywordMatrix": {
+    "photo restoration": {
+      "Skylum": 1,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 18,
+      "Photomyne": 0,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "restore photos": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "old photos": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 3,
+      "Renew": 15,
+      "Photomyne": 2,
+      "Photoroom": 0,
+      "Remini": 12,
+      "Picsart": 0
+    },
+    "photo enhancement": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 2,
+      "Photomyne": 0,
+      "Photoroom": 0,
+      "Remini": 2,
+      "Picsart": 0
+    },
+    "enhance": {
+      "Skylum": 5,
+      "Dzine": 8,
+      "Lift": 30,
+      "Renew": 10,
+      "Photomyne": 5,
+      "Photoroom": 4,
+      "Remini": 109,
+      "Picsart": 35
+    },
+    "upscale": {
+      "Skylum": 2,
+      "Dzine": 0,
+      "Lift": 18,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 0,
+      "Remini": 4,
+      "Picsart": 12
+    },
+    "HD": {
+      "Skylum": 2,
+      "Dzine": 2,
+      "Lift": 7,
+      "Renew": 6,
+      "Photomyne": 0,
+      "Photoroom": 16,
+      "Remini": 3,
+      "Picsart": 14
+    },
+    "AI": {
+      "Skylum": 77,
+      "Dzine": 446,
+      "Lift": 543,
+      "Renew": 57,
+      "Photomyne": 72,
+      "Photoroom": 252,
+      "Remini": 82,
+      "Picsart": 940
+    },
+    "artificial intelligence": {
+      "Skylum": 1,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "machine learning": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "scan": {
+      "Skylum": 1,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 0,
+      "Photomyne": 72,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 5
+    },
+    "scanning": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 0,
+      "Photomyne": 39,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "digitize": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 0,
+      "Photomyne": 1,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "colorize": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 10,
+      "Renew": 3,
+      "Photomyne": 23,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "colorization": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 5,
+      "Photomyne": 4,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "black and white": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 2,
+      "Renew": 2,
+      "Photomyne": 1,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "background removal": {
+      "Skylum": 3,
+      "Dzine": 0,
+      "Lift": 2,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 3,
+      "Remini": 0,
+      "Picsart": 4
+    },
+    "remove background": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 1,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 19,
+      "Remini": 0,
+      "Picsart": 7
+    },
+    "photo editing": {
+      "Skylum": 10,
+      "Dzine": 0,
+      "Lift": 1,
+      "Renew": 2,
+      "Photomyne": 0,
+      "Photoroom": 19,
+      "Remini": 4,
+      "Picsart": 6
+    },
+    "editor": {
+      "Skylum": 13,
+      "Dzine": 12,
+      "Lift": 28,
+      "Renew": 1,
+      "Photomyne": 0,
+      "Photoroom": 92,
+      "Remini": 0,
+      "Picsart": 141
+    },
+    "edit photos": {
+      "Skylum": 2,
+      "Dzine": 0,
+      "Lift": 2,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 3,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "free": {
+      "Skylum": 2,
+      "Dzine": 47,
+      "Lift": 4,
+      "Renew": 5,
+      "Photomyne": 92,
+      "Photoroom": 74,
+      "Remini": 4,
+      "Picsart": 196
+    },
+    "trial": {
+      "Skylum": 1,
+      "Dzine": 1,
+      "Lift": 12,
+      "Renew": 4,
+      "Photomyne": 53,
+      "Photoroom": 7,
+      "Remini": 0,
+      "Picsart": 161
+    },
+    "premium": {
+      "Skylum": 0,
+      "Dzine": 1,
+      "Lift": 0,
+      "Renew": 1,
+      "Photomyne": 1,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 120
+    },
+    "pro": {
+      "Skylum": 23,
+      "Dzine": 88,
+      "Lift": 76,
+      "Renew": 18,
+      "Photomyne": 36,
+      "Photoroom": 363,
+      "Remini": 21,
+      "Picsart": 409
+    },
+    "download": {
+      "Skylum": 3,
+      "Dzine": 0,
+      "Lift": 5,
+      "Renew": 6,
+      "Photomyne": 23,
+      "Photoroom": 46,
+      "Remini": 2,
+      "Picsart": 38
+    },
+    "app": {
+      "Skylum": 15,
+      "Dzine": 87,
+      "Lift": 75,
+      "Renew": 63,
+      "Photomyne": 79,
+      "Photoroom": 217,
+      "Remini": 51,
+      "Picsart": 245
+    },
+    "face": {
+      "Skylum": 4,
+      "Dzine": 12,
+      "Lift": 15,
+      "Renew": 6,
+      "Photomyne": 4,
+      "Photoroom": 25,
+      "Remini": 22,
+      "Picsart": 68
+    },
+    "portrait": {
+      "Skylum": 8,
+      "Dzine": 0,
+      "Lift": 11,
+      "Renew": 2,
+      "Photomyne": 0,
+      "Photoroom": 2,
+      "Remini": 3,
+      "Picsart": 26
+    },
+    "selfie": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 2,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 12
+    },
+    "video": {
+      "Skylum": 0,
+      "Dzine": 80,
+      "Lift": 3,
+      "Renew": 2,
+      "Photomyne": 33,
+      "Photoroom": 36,
+      "Remini": 32,
+      "Picsart": 252
+    },
+    "animation": {
+      "Skylum": 0,
+      "Dzine": 32,
+      "Lift": 0,
+      "Renew": 4,
+      "Photomyne": 5,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 14
+    },
+    "e-commerce": {
+      "Skylum": 1,
+      "Dzine": 0,
+      "Lift": 1,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 14,
+      "Remini": 4,
+      "Picsart": 13
+    },
+    "product photo": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 49,
+      "Remini": 0,
+      "Picsart": 5
+    },
+    "family": {
+      "Skylum": 1,
+      "Dzine": 30,
+      "Lift": 0,
+      "Renew": 6,
+      "Photomyne": 13,
+      "Photoroom": 0,
+      "Remini": 2,
+      "Picsart": 1
+    },
+    "memories": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 2,
+      "Renew": 5,
+      "Photomyne": 7,
+      "Photoroom": 0,
+      "Remini": 0,
+      "Picsart": 0
+    },
+    "heritage": {
+      "Skylum": 0,
+      "Dzine": 0,
+      "Lift": 0,
+      "Renew": 0,
+      "Photomyne": 0,
+      "Photoroom": 0,
+      "Remini": 2,
+      "Picsart": 0
+    }
+  },
+  "keywordOverlap": [
+    {
+      "pair": "Lift / Picsart",
+      "sharedKeywords": 18
+    },
+    {
+      "pair": "Skylum / Picsart",
+      "sharedKeywords": 17
+    },
+    {
+      "pair": "Lift / Renew",
+      "sharedKeywords": 17
+    },
+    {
+      "pair": "Lift / Photoroom",
+      "sharedKeywords": 17
+    },
+    {
+      "pair": "Renew / Photomyne",
+      "sharedKeywords": 17
+    },
+    {
+      "pair": "Photoroom / Picsart",
+      "sharedKeywords": 17
+    },
+    {
+      "pair": "Skylum / Lift",
+      "sharedKeywords": 16
+    },
+    {
+      "pair": "Renew / Picsart",
+      "sharedKeywords": 16
+    },
+    {
+      "pair": "Skylum / Photoroom",
+      "sharedKeywords": 15
+    },
+    {
+      "pair": "Skylum / Renew",
+      "sharedKeywords": 14
+    },
+    {
+      "pair": "Lift / Remini",
+      "sharedKeywords": 14
+    },
+    {
+      "pair": "Renew / Remini",
+      "sharedKeywords": 14
+    },
+    {
+      "pair": "Remini / Picsart",
+      "sharedKeywords": 14
+    },
+    {
+      "pair": "Skylum / Remini",
+      "sharedKeywords": 13
+    },
+    {
+      "pair": "Dzine / Renew",
+      "sharedKeywords": 13
+    },
+    {
+      "pair": "Dzine / Picsart",
+      "sharedKeywords": 13
+    },
+    {
+      "pair": "Lift / Photomyne",
+      "sharedKeywords": 13
+    },
+    {
+      "pair": "Renew / Photoroom",
+      "sharedKeywords": 13
+    },
+    {
+      "pair": "Photomyne / Picsart",
+      "sharedKeywords": 13
+    },
+    {
+      "pair": "Photoroom / Remini",
+      "sharedKeywords": 12
+    },
+    {
+      "pair": "Dzine / Photomyne",
+      "sharedKeywords": 11
+    },
+    {
+      "pair": "Skylum / Dzine",
+      "sharedKeywords": 10
+    },
+    {
+      "pair": "Skylum / Photomyne",
+      "sharedKeywords": 10
+    },
+    {
+      "pair": "Dzine / Lift",
+      "sharedKeywords": 10
+    },
+    {
+      "pair": "Dzine / Photoroom",
+      "sharedKeywords": 10
+    },
+    {
+      "pair": "Photomyne / Remini",
+      "sharedKeywords": 10
+    },
+    {
+      "pair": "Dzine / Remini",
+      "sharedKeywords": 9
+    },
+    {
+      "pair": "Photomyne / Photoroom",
+      "sharedKeywords": 9
+    }
+  ],
+  "uniqueOpportunities": [
+    {
+      "keyword": "photo restoration",
+      "usedBy": [
+        "Skylum",
+        "Renew"
+      ],
+      "opportunity": "Low competition in peer group — only 2 competitors target this term"
+    },
+    {
+      "keyword": "photo enhancement",
+      "usedBy": [
+        "Renew",
+        "Remini"
+      ],
+      "opportunity": "Low competition in peer group — only 2 competitors target this term"
+    },
+    {
+      "keyword": "artificial intelligence",
+      "usedBy": [
+        "Skylum"
+      ],
+      "opportunity": "Very low competition — only 1 competitor targets this term"
+    },
+    {
+      "keyword": "scanning",
+      "usedBy": [
+        "Photomyne"
+      ],
+      "opportunity": "Very low competition — only 1 competitor targets this term"
+    },
+    {
+      "keyword": "digitize",
+      "usedBy": [
+        "Photomyne"
+      ],
+      "opportunity": "Very low competition — only 1 competitor targets this term"
+    },
+    {
+      "keyword": "colorization",
+      "usedBy": [
+        "Renew",
+        "Photomyne"
+      ],
+      "opportunity": "Low competition in peer group — only 2 competitors target this term"
+    },
+    {
+      "keyword": "selfie",
+      "usedBy": [
+        "Lift",
+        "Picsart"
+      ],
+      "opportunity": "Low competition in peer group — only 2 competitors target this term"
+    },
+    {
+      "keyword": "product photo",
+      "usedBy": [
+        "Photoroom",
+        "Picsart"
+      ],
+      "opportunity": "Low competition in peer group — only 2 competitors target this term"
+    },
+    {
+      "keyword": "heritage",
+      "usedBy": [
+        "Remini"
+      ],
+      "opportunity": "Very low competition — only 1 competitor targets this term"
+    }
+  ]
+}

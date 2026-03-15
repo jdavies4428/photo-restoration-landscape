@@ -1,0 +1,430 @@
+{
+  "lastUpdated": "2026-03-14",
+  "competitors": [
+    {
+      "name": "Skylum",
+      "slug": "skylum",
+      "url": "https://skylum.com/",
+      "tagline": "Your Gateway to Creative Imaging",
+      "category": "Desktop Photo Editor",
+      "founded": null,
+      "platforms": ["Windows", "macOS", "iOS", "Android", "ChromeOS", "Web"],
+      "targetAudience": ["Photography enthusiasts", "Professional photographers", "Content creators"],
+      "products": ["Luminar Neo", "Luminar Mobile", "Aperty"],
+      "keyFeatures": [
+        "AI Sky Replacement",
+        "Background Removal",
+        "Portrait Bokeh",
+        "GenErase/GenSwap/GenExpand",
+        "RAW editing",
+        "Batch editing",
+        "HDR Merge",
+        "Focus Stacking",
+        "Panorama Stitching",
+        "Upscale AI",
+        "Noiseless AI"
+      ],
+      "aiCapabilities": [
+        "Accent AI",
+        "Sky AI",
+        "GenErase",
+        "GenSwap",
+        "GenExpand",
+        "SuperSharp AI",
+        "Noiseless AI",
+        "Upscale AI",
+        "Magic Light AI"
+      ],
+      "pricing": {
+        "model": "perpetual",
+        "freeTier": false,
+        "freeTrial": "7 days",
+        "plans": [
+          {"name": "Perpetual Desktop", "price": "~$89 USD one-time", "billing": "one-time"},
+          {"name": "Perpetual Cross-Device", "price": "~$109 USD one-time", "billing": "one-time"},
+          {"name": "Perpetual Max", "price": "~$119 USD one-time", "billing": "one-time"}
+        ]
+      },
+      "metrics": {
+        "users": "1M+ customers",
+        "downloads": null,
+        "rating": 4.8,
+        "reviews": null,
+        "mau": null
+      },
+      "usps": [
+        "Cross-device ecosystem",
+        "16 years in business",
+        "800+ editing add-ons marketplace",
+        "Perpetual license (not subscription)"
+      ]
+    },
+    {
+      "name": "Dzine",
+      "slug": "dzine",
+      "url": "https://www.dzine.ai/",
+      "tagline": "The Most Controllable AI Image & Design Tool",
+      "category": "AI Design Tool",
+      "founded": null,
+      "platforms": ["Web"],
+      "targetAudience": ["Design professionals", "Content creators", "Teams"],
+      "products": ["Dzine Studio"],
+      "keyFeatures": [
+        "AI image generation",
+        "Controllable AI outputs",
+        "Design templates",
+        "Typography library",
+        "Component library"
+      ],
+      "aiCapabilities": [
+        "Controllable AI image synthesis",
+        "Design automation"
+      ],
+      "pricing": {
+        "model": "subscription",
+        "freeTier": true,
+        "freeTrial": null,
+        "plans": [
+          {"name": "Free", "price": "$0", "billing": "free"},
+          {"name": "Pro", "price": "Unknown", "billing": "monthly"}
+        ]
+      },
+      "metrics": {
+        "users": null,
+        "downloads": null,
+        "rating": null,
+        "reviews": null,
+        "mau": null
+      },
+      "usps": [
+        "Most controllable AI generation",
+        "Dark-mode designer workflow",
+        "Precision-focused"
+      ]
+    },
+    {
+      "name": "Lift",
+      "slug": "lift",
+      "url": "https://liftapp.ai/",
+      "tagline": "Edit, enhance & create stunning images with AI – instantly",
+      "category": "AI Photo Editor",
+      "founded": null,
+      "platforms": ["Web", "iOS", "Android"],
+      "targetAudience": ["Content creators", "Social media managers", "E-commerce businesses", "Influencers"],
+      "products": ["Lift AI Photo Editor"],
+      "keyFeatures": [
+        "Text-to-image generation",
+        "Background removal",
+        "4K upscaling",
+        "Object/watermark removal",
+        "Anime/cartoon/Ghibli filters",
+        "Headshot generation",
+        "Hairstyle/clothing try-on",
+        "Colorization",
+        "Face swap",
+        "Generative fill"
+      ],
+      "aiCapabilities": [
+        "Text-to-image",
+        "Image upscaling",
+        "Background removal",
+        "Style transfer",
+        "Face enhancement",
+        "Generative fill"
+      ],
+      "pricing": {
+        "model": "subscription",
+        "freeTier": true,
+        "freeTrial": "7 days",
+        "plans": [
+          {"name": "Free", "price": "$0", "billing": "free"},
+          {"name": "Pro", "price": "Unknown", "billing": "monthly/yearly"}
+        ]
+      },
+      "metrics": {
+        "users": null,
+        "downloads": "13M+",
+        "rating": 4.8,
+        "reviews": "130K+",
+        "mau": null
+      },
+      "usps": [
+        "Browser-based no-install",
+        "Unified generation + editing",
+        "Extensive style filters",
+        "13M+ installs"
+      ]
+    },
+    {
+      "name": "Renew",
+      "slug": "renew",
+      "url": "https://renew-photo.com/",
+      "tagline": "Restore Old Damaged Photos with the Renew APP",
+      "category": "Photo Restoration",
+      "founded": null,
+      "platforms": ["iOS", "Android"],
+      "targetAudience": ["Families", "Heritage photo preservation"],
+      "products": ["Renew App"],
+      "keyFeatures": [
+        "Damage/scratch removal",
+        "Colorization",
+        "HD enhancement",
+        "Face sharpening",
+        "Lighting correction",
+        "Photo animation",
+        "Photo combining"
+      ],
+      "aiCapabilities": [
+        "AI damage detection",
+        "AI colorization",
+        "Face sharpening",
+        "HD enhancement"
+      ],
+      "pricing": {
+        "model": "one-time",
+        "freeTier": true,
+        "freeTrial": null,
+        "plans": [
+          {"name": "Free", "price": "$0", "billing": "free"},
+          {"name": "Premium", "price": "$9.99", "billing": "one-time"}
+        ]
+      },
+      "metrics": {
+        "users": null,
+        "downloads": null,
+        "rating": 4.6,
+        "reviews": "1.4K+",
+        "mau": null,
+        "photosProcessed": "1M+"
+      },
+      "usps": [
+        "Under 60 seconds processing",
+        "100% privacy protected",
+        "$9.99 one-time (cheapest)",
+        "No editing expertise needed"
+      ]
+    },
+    {
+      "name": "Photomyne",
+      "slug": "photomyne",
+      "url": "https://photomyne.com/",
+      "tagline": "Save & Cherish Family Memories Forever",
+      "category": "Photo Scanning & Archival",
+      "founded": null,
+      "platforms": ["iOS", "Android", "Web"],
+      "targetAudience": ["Family historians", "Genealogy enthusiasts", "Elderly users", "Large collection digitizers"],
+      "products": ["Photomyne", "SlideScan", "FilmBox", "Colorize", "Photo Family Tree", "FridgeArt"],
+      "keyFeatures": [
+        "Auto-detect & crop",
+        "Auto-rotate",
+        "Perspective correction",
+        "Color restoration",
+        "Voice control (iOS)",
+        "Album creation",
+        "People tagging",
+        "Location/date tagging",
+        "OCR text detection",
+        "Back-of-photo attachment",
+        "Shareable web links",
+        "Collage creation"
+      ],
+      "aiCapabilities": [
+        "Auto photo detection/cropping",
+        "B&W colorization",
+        "Photo sharpening",
+        "Perspective correction",
+        "OCR text recognition"
+      ],
+      "pricing": {
+        "model": "subscription",
+        "freeTier": false,
+        "freeTrial": "3 days",
+        "plans": [
+          {"name": "Monthly", "price": "$14.99/mo", "billing": "monthly"},
+          {"name": "Annual", "price": "$59.99/yr", "billing": "yearly"}
+        ]
+      },
+      "metrics": {
+        "users": null,
+        "downloads": null,
+        "rating": null,
+        "reviews": null,
+        "mau": null
+      },
+      "usps": [
+        "Specialized apps for different media types",
+        "Bulk scanning (500+ photos in hours)",
+        "Genealogy integration",
+        "Physical accessories on Amazon"
+      ]
+    },
+    {
+      "name": "Photoroom",
+      "slug": "photoroom",
+      "url": "https://www.photoroom.com/",
+      "tagline": "AI-Powered Photo Editor and Listing Studio for Product Photography",
+      "category": "Product Photography",
+      "founded": 2019,
+      "platforms": ["iOS", "Android", "Web", "Desktop"],
+      "targetAudience": ["E-commerce sellers", "Small to enterprise businesses", "Marketplace vendors", "Fashion retailers"],
+      "products": ["Photoroom App", "Photoroom API"],
+      "keyFeatures": [
+        "Background removal",
+        "AI-generated backgrounds",
+        "Product staging",
+        "Virtual models",
+        "Batch editing",
+        "Video generation",
+        "Magic retouch",
+        "Brand kit",
+        "API automation"
+      ],
+      "aiCapabilities": [
+        "Neural background detection",
+        "Generative AI backgrounds",
+        "Virtual model generation",
+        "Product beautification",
+        "Object removal",
+        "Video from stills"
+      ],
+      "pricing": {
+        "model": "subscription",
+        "freeTier": true,
+        "freeTrial": true,
+        "plans": [
+          {"name": "Free", "price": "$0", "billing": "free", "limits": "250 exports/mo"},
+          {"name": "Pro", "price": "Unknown", "billing": "monthly/yearly"},
+          {"name": "Max", "price": "Unknown", "billing": "monthly/yearly"},
+          {"name": "Ultra", "price": "Unknown", "billing": "monthly/yearly"},
+          {"name": "Enterprise", "price": "Custom", "billing": "custom"}
+        ]
+      },
+      "metrics": {
+        "users": null,
+        "downloads": "300M+",
+        "rating": null,
+        "reviews": null,
+        "mau": null
+      },
+      "usps": [
+        "300M+ downloads",
+        "90% cost savings claim",
+        "72% CTR uplift (Smartly case study)",
+        "API integration",
+        "Enterprise-ready with SOC 2"
+      ]
+    },
+    {
+      "name": "Remini",
+      "slug": "remini",
+      "url": "https://remini.ai/",
+      "tagline": "The only photo and video enhancer you'll ever need",
+      "category": "Photo Enhancement",
+      "founded": null,
+      "platforms": ["iOS", "Android", "Web"],
+      "targetAudience": ["Social media creators", "Heritage photo enthusiasts", "E-commerce businesses", "Publishers"],
+      "products": ["Remini App", "Remini Web"],
+      "keyFeatures": [
+        "Unblur & sharpen",
+        "Denoise",
+        "Old photo restoration",
+        "Face enhancement",
+        "Color fixing",
+        "Image enlarger (2x)",
+        "Background enhancement",
+        "Low quality enhancement",
+        "Video enhancement",
+        "AI Photos (generative portraits)"
+      ],
+      "aiCapabilities": [
+        "Photo enhancement",
+        "Video enhancement",
+        "AI portrait generation",
+        "Denoising",
+        "Face enhancement",
+        "Color correction"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "freeTier": true,
+        "freeTrial": null,
+        "plans": [
+          {"name": "Free", "price": "$0 (with ads)", "billing": "free"},
+          {"name": "Premium", "price": "Unknown", "billing": "subscription"}
+        ]
+      },
+      "metrics": {
+        "users": null,
+        "downloads": "15M/month",
+        "rating": null,
+        "reviews": null,
+        "mau": "100M",
+        "photosProcessed": "5B+"
+      },
+      "usps": [
+        "100M monthly active users",
+        "5B+ photos processed",
+        "100% authentic enhancements (not AI-replaced)",
+        "One-button simplicity",
+        "Video enhancement support"
+      ]
+    },
+    {
+      "name": "Picsart",
+      "slug": "picsart",
+      "url": "https://picsart.com/",
+      "tagline": "The AI Creative Platform",
+      "category": "All-in-One Creative Platform",
+      "founded": null,
+      "platforms": ["iOS", "Android", "Web", "Windows"],
+      "targetAudience": ["Social media creators", "TikTok/Instagram creators", "Small businesses", "Marketing teams"],
+      "products": ["Picsart App", "Picsart Web", "Picsart Persona", "ComicMe", "Storyline", "Flow"],
+      "keyFeatures": [
+        "AI image generation (93 models)",
+        "AI video generation",
+        "Background removal",
+        "Face editing",
+        "AI character creation",
+        "Comic generation",
+        "Animated stories",
+        "Workflow automation",
+        "80K+ templates",
+        "Real-time collaboration"
+      ],
+      "aiCapabilities": [
+        "93 AI models",
+        "Text-to-image (Nano Banana 2, GPT Image 1.5, Flux 2)",
+        "Text-to-video (VEO3)",
+        "Background manipulation",
+        "Face transformation",
+        "Voiceover generation",
+        "Script writing"
+      ],
+      "pricing": {
+        "model": "subscription",
+        "freeTier": true,
+        "freeTrial": null,
+        "plans": [
+          {"name": "Free", "price": "$0", "billing": "free"},
+          {"name": "Pro", "price": "$11/mo or $63/yr", "billing": "monthly/yearly"},
+          {"name": "Ultra", "price": "$31/mo or $210/yr", "billing": "monthly/yearly"}
+        ]
+      },
+      "metrics": {
+        "users": "150M+ creators",
+        "downloads": null,
+        "rating": null,
+        "reviews": null,
+        "mau": null,
+        "editsMonthly": "1B+"
+      },
+      "usps": [
+        "93 AI models in one platform",
+        "Save $3K/yr consolidation claim",
+        "Apple & Google Editor's Choice",
+        "1B+ monthly edits",
+        "Workflow automation (Flow)"
+      ]
+    }
+  ]
+}
